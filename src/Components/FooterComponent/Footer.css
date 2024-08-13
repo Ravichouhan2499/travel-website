@@ -1,0 +1,172 @@
+/* General Styles */
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+  
+  .text-white {
+    color: #fff;
+  }
+  
+  .text-white-50 {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .btn-square {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Footer Layout Styles */
+  .bg-dark {
+    background-color: #343a40;
+  }
+  
+  .border-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Header and Section Titles */
+  h5, h6 {
+    font-size: 1.25rem;
+  }
+  
+  h5 {
+    font-size: 1.5rem;
+  }
+  
+  h6 {
+    font-size: 1.125rem;
+  }
+  
+  /* Links and Icons */
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #007bff;
+  }
+  
+  .fa {
+    margin-right: 5px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 767px) {
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .newsletter{
+        width:50%
+    }
+  
+    .text-center {
+      text-align: center;
+    }
+  
+    .text-md-start {
+      text-align: left;
+    }
+  
+    .text-md-end {
+      text-align: right;
+    }
+  
+    .d-flex {
+      display: flex;
+    }
+  
+    .d-flex.flex-column {
+      flex-direction: column;
+    }
+  
+    .d-flex.flex-wrap {
+      flex-wrap: wrap;
+    }
+  
+    .input-group {
+      flex-direction: column;
+    }
+  
+    .input-group .form-control {
+      border-radius: 0;
+      margin-bottom: 10px;
+    }
+  
+    .input-group .btn {
+      border-radius: 0;
+    }
+  
+    .btn-square {
+      width: 35px;
+      height: 35px;
+    }
+  
+    h5 {
+      font-size: 1.25rem;
+    }
+  
+    h6 {
+      font-size: 1rem;
+    }
+  
+    .col-lg-3,
+    .col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  
+    .mb-md-5 {
+      margin-bottom: 1.25rem;
+    }
+  
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+  
+    .me-2 {
+      margin-right: 0.5rem;
+    }
+  
+    .py-5 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .mb-md-5 {
+      margin-bottom: 3rem;
+    }
+  
+    .py-5 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+  
