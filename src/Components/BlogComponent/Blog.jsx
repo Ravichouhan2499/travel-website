@@ -64,7 +64,7 @@ export default function Blog() {
           </div>
           <div className="bg-white p-4">
             <div className="d-flex mb-2">
-              <a className="text-primary text-uppercase text-decoration-none" href>Admin</a>
+              <a className="text-primary text-uppercase text-decoration-none" href>Trimbakeshwar</a>
               <span className="text-primary px-2">|</span>
               <Link to='/' className="text-primary text-uppercase text-decoration-none">
               Avantika &amp;  Vacations</Link>

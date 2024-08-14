@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="col-lg-3 col-md-6 mb-4 mb-md-5">
-        <h6 className="text-white text-uppercase mb-3" style={{ letterSpacing: 5 }}>From us</h6>
+        <h6 className="text-white text-uppercase mb-3" style={{ letterSpacing: 5 }}>Get in Touch</h6>
         <div className="d-flex flex-wrap">
         <p><i className="" />If you have any questions or need further assistance, please don’t hesitate to reach out. We’re here to make your travel experience as seamless and enjoyable as possible.</p>
         <Link to="/contact" onClick={handleLinkClick} className="btn btn-primary py-2 px-4 me-3 animated slideInLeft">Contact us</Link>
