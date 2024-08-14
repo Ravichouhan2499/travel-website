@@ -56,7 +56,7 @@ export default function Destiny() {
           <img className="img-fluid" src={img4} style={{height:'260px'}} alt />
           <a className="destination-overlay text-white text-decoration-none" href>
             <h5 className="text-white">Nageshwar Temple</h5>
-            <span>Gujrat</span>
+            <span>Gujarat</span>
           </a>
         </div>
       </div>

@@ -18,7 +18,7 @@ import Registration from './Components/RegistrationComponent/Registration'
 
 export default function App() {
   return (<>
-    <TopBar/>
+
     <Navbar/>
     
 <Routes>
