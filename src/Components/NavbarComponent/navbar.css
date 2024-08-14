@@ -1,15 +1,4 @@
-@media (min-width:900px ) or (max-width :1440px) {
-    .navv{
-        margin-left: 350px;
-       
-      }
+.navbar-nav{
+    margin-left: 32rem;
 }
 
-@media (max-width : 799px)
-{
-    .navv{
-        margin-left: 10px;
-      
-
-    }
-}

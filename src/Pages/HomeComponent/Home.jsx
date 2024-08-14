@@ -19,6 +19,7 @@ export default function Home() {
   <Caro/>
   <Service/>
   <Destiny/>
+  <Blog/>
   <PackageComponent/>
   <About/>
   <Registration/>

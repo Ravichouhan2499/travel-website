@@ -23,7 +23,7 @@ export default function Registration() {
           <div className="col-lg-5">
             <div className="card border-0">
               <div className="card-header bg-primary text-center p-4">
-                <h1 className="text-white m-0">Sign Up Now</h1>
+                <h1 className="text-white m-0">Contact us</h1>
               </div>
               <div className="card-body rounded-bottom bg-white p-5">
                 <form>
@@ -33,7 +33,13 @@ export default function Registration() {
                   <div className="form-group mb-3">
                     <input type="email" className="form-control p-4" placeholder="Your email" required />
                   </div>
+
                   <div className="form-group mb-3">
+                  <textarea className="form-control bg-light border-2" rows={3} placeholder="Message" required />
+
+                  </div>
+
+                  {/* <div className="form-group mb-3">
                     <select className="form-select px-4" style={{ height: '47px' }}>
                       <option value="">Select a destination</option>
                       <option value="1">Jyotirling</option>
@@ -42,9 +48,9 @@ export default function Registration() {
                       <option value="4">Badrinath</option>
                       <option value="5">Hills</option>
                     </select>
-                  </div>
+                  </div> */}
                   <div>
-                    <button className="btn btn-primary btn-block py-3 w-100" type="submit">Sign Up Now</button>
+                    <button className="btn btn-primary btn-block py-3 w-100" type="submit">Contact</button>
                   </div>
                 </form>
               </div>

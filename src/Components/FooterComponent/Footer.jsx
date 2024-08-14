@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Footer.css'
+import Img from '../../Img/Av.png'
 
 export default function Footer() {
 
@@ -37,6 +38,13 @@ export default function Footer() {
         </div>
 
         <div className="col-lg-3 col-md-6 mb-4 mb-md-5">
+          <h5 className="text-white text-uppercase mb-4" style={{ letterSpacing: 5 }}>Contact Us</h5>
+          <p><i className="fa fa-map-marker-alt me-2" />Tulsi Nagar, Opposite Shani Mandir, Ramkola Road, Pradrauna Kushinagar</p>
+          <p><i className="fa fa-phone-alt me-2" />+91 7068695511</p>
+          <Link className="fa fa-envelope text-white" to='mailto:avantikavacations@gmail.com'>&nbsp; avantikavacations@gmail.com</Link>
+        </div>
+
+        <div className="col-lg-3 col-md-6 mb-4 mb-md-5">
           <h6 className="text-white text-uppercase mb-3" style={{ letterSpacing: 5 }}>Follow Us</h6>
           <div className="d-flex flex-wrap">
             <Link className="btn btn-outline-primary btn-square me-2 mb-2" to="#">
@@ -51,23 +59,26 @@ export default function Footer() {
             <Link className="btn btn-outline-primary btn-square mb-2" to="#">
               <i className="fab fa-instagram" />
             </Link>
+            <Link className="btn btn-outline-primary btn-square mb-2" to="https://www.youtube.com/@avantikavacations">
+              <i className="fab fa-youtube" />
+            </Link>
+
           </div>
         </div>
 
         <div className="col-lg-3 col-md-6 mb-4 mb-md-5">
-          <h6 className="text-white text-uppercase mb-3" style={{ letterSpacing: 5 }}>Newsletter</h6>
-          <div className="input-group">
-            <input type="text" className="form-control border-light " style={{ padding: '15px' , width:'50%' }} placeholder="Your Email" />
-            <button className="btn btn-primary px-4">Sign Up</button>
-          </div>
-        </div>
+        <h6 className="text-white text-uppercase mb-3" style={{ letterSpacing: 5 }}>From us</h6>
+        <div className="d-flex flex-wrap">
+        <p><i className="" />If you have any questions or need further assistance, please don’t hesitate to reach out. We’re here to make your travel experience as seamless and enjoyable as possible.</p>
+        <Link to="/contact" onClick={handleLinkClick} className="btn btn-primary py-2 px-4 me-3 animated slideInLeft">Contact us</Link>
 
-        <div className="col-lg-3 col-md-6 mb-4 mb-md-5">
-          <h5 className="text-white text-uppercase mb-4" style={{ letterSpacing: 5 }}>Contact Us</h5>
-          <p><i className="fa fa-map-marker-alt me-2" />Tulsi Nagar, Opposite Shani Mandir, Ramkola Road, Pradrauna Kushinagar</p>
-          <p><i className="fa fa-phone-alt me-2" />+91 7068695511</p>
-          <Link className="fa fa-envelope text-white" to='mailto:avantikavacations@gmail.com'>avantikavacations@gmail.com</Link>
-        </div>
+        
+
+          </div>
+          </div>
+       
+
+     
       </div>
     </div>
 
