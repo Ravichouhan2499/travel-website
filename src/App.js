@@ -34,7 +34,7 @@ export default function App() {
 
 
 </Routes>
-
+<Blog/>
 <Footer/> 
   
   </>
