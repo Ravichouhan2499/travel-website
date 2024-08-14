@@ -21,8 +21,6 @@ export default function App() {
     <TopBar/>
     <Navbar/>
     
-
-   
 <Routes>
   <Route path='/' element={<Home/>}></Route>
   <Route path='/service' element={<Service/>}></Route>
@@ -31,6 +29,12 @@ export default function App() {
   <Route path='/package' element={<PackageComponent/>}></Route>
   <Route path='/contact' element={<Registration/>}></Route>
   <Route path='/destination' element={<Destiny/>}></Route>
+  <Route path='/blog' element={<Blog/>}></Route>
+  <Route path='/testimonial' element={<Testimonial/>}></Route>
+  <Route path='/team' element={<TeamComponent/>}></Route>
+
+
+  
 
 
 </Routes>

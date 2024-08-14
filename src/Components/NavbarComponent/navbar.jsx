@@ -32,10 +32,24 @@ export default function Navbar() {
             <div className="navbar-nav ">
               <Link to="/" className="nav-item nav-link" onClick={handleLinkClick}>Home</Link>
               <Link to="/about" className="nav-item nav-link" onClick={handleLinkClick}>About</Link>
-              <Link to="/service" className="nav-item nav-link" onClick={handleLinkClick}>Services</Link>
+
+             <div className="nav-item dropdown">
+                <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Service
+            </Link>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                  <li><Link className="dropdown-item" to="/service" onClick={handleLinkClick}>Service</Link></li>
+                  <li><Link className="dropdown-item" to="/blog" onClick={handleLinkClick}>Blog Detail</Link></li>
+                  <li><Link className="dropdown-item" to="/destination" onClick={handleLinkClick}>Destination</Link></li>
+                  <li><Link className="dropdown-item" to="/package" onClick={handleLinkClick}>Packages</Link></li>
+                  <li><Link className="dropdown-item" to="/testimonial" onClick={handleLinkClick}>Testimonial</Link></li>
+                </ul>
+              </div> 
               <Link to="/package" className="nav-item nav-link" onClick={handleLinkClick}>Packages</Link>
-              <Link to="/destination" className="nav-item nav-link" onClick={handleLinkClick}>Destination</Link>
+
               <Link to="/contact" className="nav-item nav-link" onClick={handleLinkClick}>Contact</Link>
+
 
 
 
