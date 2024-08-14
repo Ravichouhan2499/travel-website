@@ -19,7 +19,7 @@ export default function Caro() {
           <div className="p-3 text-center">
             <h5 className="text-white text-uppercase mb-3">AVANTIKA &amp; VACATIONS</h5>
             <h1 className="display-4 text-white mb-md-4 ">Let's Discover <br/> The World Together </h1>
-            <Link to="/services" className="btn btn-primary py-2 px-4 me-3 animated slideInLeft">Book now</Link>
+            <Link to="/contact" className="btn btn-primary py-2 px-4 me-3 animated slideInLeft">Book now</Link>
           </div>
         </Carousel.Caption>
       </Carousel.Item>
