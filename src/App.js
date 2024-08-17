@@ -15,6 +15,7 @@ import Blog from './Components/BlogComponent/Blog'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/HomeComponent/Home'
 import Registration from './Components/RegistrationComponent/Registration'
+import Login from './Components/LoginComponent/Login'
 
 export default function App() {
   return (<>
@@ -32,6 +33,9 @@ export default function App() {
   <Route path='/blog' element={<Blog/>}></Route>
   <Route path='/testimonial' element={<Testimonial/>}></Route>
   <Route path='/team' element={<TeamComponent/>}></Route>
+  <Route path='/Admin' element={<Login/>}></Route>
+
+
 
 
   

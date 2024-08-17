@@ -1,0 +1,33 @@
+.img {
+    background-image: url("../../Img/forr.jpg");
+    background-size: cover;
+    padding-top: 0px;
+
+}
+
+.container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .form-container {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .heed{
+    color: rgb(80, 79, 79);
+  }
+ 
+  
