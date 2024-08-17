@@ -16,33 +16,21 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/HomeComponent/Home'
 import Registration from './Components/RegistrationComponent/Registration'
 import Login from './Components/LoginComponent/Login'
+import Auth from './Pages/AuthComponent/Auth'
+import HomePage from './Pages/HomepageComponent/HomePage'
+
 
 export default function App() {
   return (<>
 
-    <Navbar/>
+    
     
 <Routes>
-  <Route path='/' element={<Home/>}></Route>
-  <Route path='/service' element={<Service/>}></Route>
-  <Route path='/about' element={<About/>}></Route>
-  <Route path='/booking' element={<Booking/>}></Route>
-  <Route path='/package' element={<PackageComponent/>}></Route>
-  <Route path='/contact' element={<Registration/>}></Route>
-  <Route path='/destination' element={<Destiny/>}></Route>
-  <Route path='/blog' element={<Blog/>}></Route>
-  <Route path='/testimonial' element={<Testimonial/>}></Route>
-  <Route path='/team' element={<TeamComponent/>}></Route>
-  <Route path='/Admin' element={<Login/>}></Route>
-
-
-
-
-  
-
-
+  <Route  path='/' element={<Auth/>}></Route>
+  <Route path='/admin/*' element={<HomePage/>}></Route>
+ 
 </Routes>
-<Footer/> 
+
   
   </>
  
