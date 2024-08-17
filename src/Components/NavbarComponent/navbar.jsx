@@ -49,7 +49,7 @@ export default function Navbar() {
               <Link to="/package" className="nav-item nav-link" onClick={handleLinkClick}>Packages</Link>
 
               <Link to="/contact" className="nav-item nav-link" onClick={handleLinkClick}>Contact</Link>
-
+ 
 
 
 
