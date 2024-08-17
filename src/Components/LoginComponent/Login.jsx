@@ -1,6 +1,5 @@
 import React from 'react'
 import './Login.css'
-import img from '../../Img/fort.jpg'
 export default function Login() {
   return (
     <div className="container-fluid py-5 img" style={{ margin: '90px 0' }}>
