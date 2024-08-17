@@ -23,14 +23,26 @@ import HomePage from './Pages/HomepageComponent/HomePage'
 export default function App() {
   return (<>
 
+
     
-    
+{window.location.pathname !== '/admin' && <Navbar />}
+
 <Routes>
-  <Route  path='/' element={<Auth/>}></Route>
-  <Route path='/admin/*' element={<HomePage/>}></Route>
- 
+  <Route path='/' element={<Home/>}></Route>
+  <Route path='/service' element={<Service/>}></Route>
+  <Route path='/about' element={<About/>}></Route>
+  <Route path='/booking' element={<Booking/>}></Route>
+  <Route path='/package' element={<PackageComponent/>}></Route>
+  <Route path='/contact' element={<Registration/>}></Route>
+  <Route path='/destination' element={<Destiny/>}></Route>
+  <Route path='/blog' element={<Blog/>}></Route>
+  <Route path='/testimonial' element={<Testimonial/>}></Route>
+  <Route path='/team' element={<TeamComponent/>}></Route>
+  <Route path='/admin' element={<Auth/>}></Route>
+
 </Routes>
 
+{window.location.pathname !== '/admin' && <Navbar />}
   
   </>
  
