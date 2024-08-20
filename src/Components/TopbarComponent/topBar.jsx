@@ -9,6 +9,7 @@ export default function TopBar() {
       <img src={img}  style={{width:'100%', height:'3   00px' }}/>
     </div>
   </div>
+  
 </div>
 
   )
