@@ -14,6 +14,7 @@ import ViewServices from '../../adminComponent/adService/viewAdService'
 import EditBlog from '../../adminComponent/blog/editBlog'
 import EditPackages from '../../adminComponent/adPackages/editAdPackages'
 import EditTopdestiny from '../../adminComponent/topDestiny/editAdDestiny'
+import Login from '../../Components/LoginComponent/Login'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 
@@ -26,7 +27,7 @@ export default function
       <AdminNav/>
       
       <Routes>
-       
+
         <Route path='dashboard' element={<Admindashboard/>}></Route>
         <Route path='blog' element={<Blog/>}></Route>
         <Route path='packages' element={<AdPackage/>}></Route>

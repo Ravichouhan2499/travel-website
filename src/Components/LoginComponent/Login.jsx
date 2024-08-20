@@ -2,6 +2,7 @@ import React from 'react'
 import './Login.css'
 export default function Login() {
   return (
+    <div className='authpage'>
     <div className="container-fluid py-5 img" style={{ margin: '0px 0' }}>
     <div className="container py-5">
       <div className="row align-items-center">
@@ -43,6 +44,7 @@ export default function Login() {
         </div>
       </div>
     </div>
+  </div>
   </div>
   )
 }

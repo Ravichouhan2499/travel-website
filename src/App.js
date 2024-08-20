@@ -27,6 +27,8 @@ export default function App() {
 {window.location.pathname.startsWith('/admin') ? null : <Navbar />}
 
 
+
+
 <Routes>
   <Route path='/' element={<Home/>}></Route>
   <Route path='/service' element={<Service/>}></Route>
@@ -38,9 +40,16 @@ export default function App() {
   <Route path='/blog' element={<Blog/>}></Route>
   <Route path='/testimonial' element={<Testimonial/>}></Route>
   <Route path='/team' element={<TeamComponent/>}></Route>
+  <Route path='/admin' element={<Login/>}></Route>
+
+
   
 
-  <Route path='/admin/*' element={<Auth/>}></Route>
+  <Route path='/admin/*' element={<Auth/>}>
+
+  
+  
+  </Route>
 
 
 
