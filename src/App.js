@@ -1,21 +1,21 @@
 import React from 'react'
-import TopBar from './Components/TopbarComponent/topBar'
-import Navbar from './Components/NavbarComponent/navbar'
-import Caro from './Components/CaresueolComponenet/Caro'
-import About from './Components/AboutComponent/About'
-import Booking from './Components/BookingComponent/Booking'
-import Destiny from './Components/DestinyComponent/Destiny'
-import Feature from './Components/FeatureComponent/Feature'
-import Service from './Components/ServiceComponent/Service'
-import PackageComponent from './Components/PackageComponent\'/PackageComponent'
-import Footer from './Components/FooterComponent/Footer'
-import TeamComponent from './Components/TeamComponent/TeamComponent'
-import Testimonial from './Components/TestimonialComponent/Testimonial'
-import Blog from './Components/BlogComponent/Blog'
+import TopBar from './Components/topbarComponent/topBar'
+import Navbar from './Components/navbarComponent/navbar'
+import Caro from './Components/caresueolComponenet/caro'
+import About from './Components/aboutComponent/about'
+import Booking from './Components/bookingComponent/booking'
+import Destiny from './Components/destinyComponent/destiny'
+import Feature from './Components/featureComponent/feature'
+import Service from './Components/serviceComponent/service'
+import PackageComponent from './Components/PacakageComponent/packageComponent'
+import Footer from './Components/footerComponent/footer'
+import TeamComponent from './Components/teamComponent/teamComponent'
+import Testimonial from './Components/testimonialComponent/testimonial'
+import Blog from './Components/blogComponent/blog'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/HomeComponent/Home'
-import Registration from './Components/RegistrationComponent/Registration'
-import Login from './Components/LoginComponent/Login'
+import Registration from './Components/registrationComponent/registration'
+import Login from './Components/loginComponent/login'
 import Auth from './Pages/AuthComponent/Auth'
 import HomePage from './Pages/HomepageComponent/HomePage'
 
@@ -42,7 +42,7 @@ export default function App() {
 
 </Routes>
 
-{window.location.pathname !== '/admin' && <Navbar />}
+{window.location.pathname !== '/admin' && <Footer />}
   
   </>
  
