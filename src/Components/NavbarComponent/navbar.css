@@ -2,3 +2,25 @@
     margin-left: 32rem;
 }
 
+
+@media (min-width: 990px) and (max-width: 1050px) {
+    
+.navbar-collapse
+.navbar-nav{
+    margin-left: 400px;
+  }
+
+}  
+
+
+
+
+
+@media (min-width: 1055px) and (max-width: 1440px) {
+    
+    .navbar-collapse
+    .navbar-nav{
+       margin-left: 600px;
+      }
+    
+    }

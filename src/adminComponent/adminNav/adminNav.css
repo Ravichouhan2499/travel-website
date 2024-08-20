@@ -1,0 +1,14 @@
+.navbar-brand img {
+    width: 150px;
+    height: 60px;
+  }
+
+
+
+
+  @media (min-width: 1000px) and (max-width: 1440px) {
+  .navbar-nav{
+    margin-left: 450px;
+  }
+    
+  }

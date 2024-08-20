@@ -24,7 +24,8 @@ export default function App() {
 
 
     
-{window.location.pathname !== '/admin' && <Navbar />}
+{window.location.pathname.startsWith('/admin') ? null : <Navbar />}
+
 
 <Routes>
   <Route path='/' element={<Home/>}></Route>
@@ -37,11 +38,17 @@ export default function App() {
   <Route path='/blog' element={<Blog/>}></Route>
   <Route path='/testimonial' element={<Testimonial/>}></Route>
   <Route path='/team' element={<TeamComponent/>}></Route>
-  <Route path='/admin' element={<Auth/>}></Route>
+  
+
+  <Route path='/admin/*' element={<Auth/>}></Route>
+
+
+
 
 </Routes>
 
-{window.location.pathname !== '/admin' && <Footer/>}
+{window.location.pathname.startsWith('/admin') ? null : <Footer />}
+
   
   </>
  
