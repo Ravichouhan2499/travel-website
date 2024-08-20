@@ -1,5 +1,5 @@
 import React from 'react';
-import './registration.css';
+import './Registration.css';
 
 export default function Registration() {
   return (

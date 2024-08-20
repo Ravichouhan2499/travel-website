@@ -1,5 +1,5 @@
 import React from 'react'
-import './service.css'
+import './Service.css'
 import { RiTeamFill } from 'react-icons/ri'
 import { PiAirplaneInFlightBold, PiPersonSimpleRunBold } from 'react-icons/pi'
 import { MdDashboardCustomize } from 'react-icons/md'

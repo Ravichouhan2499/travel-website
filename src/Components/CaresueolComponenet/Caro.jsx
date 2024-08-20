@@ -2,7 +2,7 @@ import React from 'react'
 import Img1 from '../../Img/varanasi.jpg'
 
 import Img2 from '../../Img/caroo2.webp'
-import './caro.css'
+import './Caro.css'
 import { Carousel } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
