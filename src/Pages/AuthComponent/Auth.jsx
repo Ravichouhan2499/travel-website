@@ -15,6 +15,8 @@ import EditBlog from '../../adminComponent/blog/editBlog'
 import EditPackages from '../../adminComponent/adPackages/editAdPackages'
 import EditTopdestiny from '../../adminComponent/topDestiny/editAdDestiny'
 import Login from '../../Components/LoginComponent/Login'
+import AdFooter from '../../adminComponent/adminFooter/adminFooter'
+import EditadServices from '../../adminComponent/adService/editAdService'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 
@@ -40,9 +42,13 @@ export default function
         <Route path='editBlog' element={<EditBlog/>}></Route>
         <Route path='editPackages' element={<EditPackages/>}></Route>
         <Route path='editDestiny' element={<EditTopdestiny/>}></Route>
+        <Route path='editservices' element={<EditadServices/>}></Route>
 
 
       </Routes>
+
+      <AdFooter/>
+
     </div>
   )
 }

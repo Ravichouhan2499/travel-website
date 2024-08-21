@@ -19,6 +19,8 @@ import { Route, Routes } from 'react-router-dom'
 import Registration from './Components/RegistrationComponent/Registration'
 
 
+
+
 export default function App() {
   return (<>
 
@@ -42,23 +44,10 @@ export default function App() {
   <Route path='/team' element={<TeamComponent/>}></Route>
   <Route path='/admin' element={<Login/>}></Route>
 
-
-  
-
-  <Route path='/admin/*' element={<Auth/>}>
-
-  
-  
-  </Route>
-
-
-
-
+  <Route path='/admin/*' element={<Auth/>}>  </Route>
 </Routes>
 
 {window.location.pathname.startsWith('/admin') ? null : <Footer />}
-
-  
   </>
  
   )

@@ -1,20 +1,36 @@
 import React from 'react'
 import './admindashboard.css'
+import AdService from '../adService/adServices'
+import ViewServices from '../adService/viewAdService'
+import ViewTopDestiny from '../topDestiny/viewAdDestiny'
+import ViewBlog from '../blog/viewBlog'
+import ViewPackages from '../adPackages/viewAdPackages'
 
 export default function Admindashboard() {
   return (
-    <div>
-          <div className="container-1">
-    <div className="">
-      <div className="col-md-12">
-        <div className="form-container">
-          <h2 className='text-center alert-success'>Welcome to the  <br/>Avantika Vacations Dashboard</h2>
-
-          </div>
-          </div>
-          </div>
-          </div>
-
+    <div className='dash' style={{ padding: '0 15px' }}>
+    <div className='section' style={{ marginBottom: '30px' }}>
+      <ViewServices/>
     </div>
+    <hr/>
+    
+    <div className='section' style={{ marginBottom: '30px' }}>
+      <ViewTopDestiny/>
+    </div>
+    <hr/>
+    
+    <div className='section' style={{ marginBottom: '30px' }}>
+      <ViewBlog/>
+    </div>
+    <hr/>
+    
+    <div className='section'>
+      <ViewPackages/>
+      
+    </div>
+    <br/>
+    <br/>
+  </div>
+  
   )
 }

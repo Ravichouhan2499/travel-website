@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="container-lg position-relative p-0 px-lg-2" style={{ zIndex: 9 }}>
         <nav className="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-2 py-lg-0 pl-0 fixed-top ">
           <Link to="/" className="navbar-brand">&nbsp; &nbsp; &nbsp; 
-            <img src={img} alt="Brand" onClick={handleLinkClick} style={{ width: '150px', height: '65px'}} className='imglogo' />
+            <img src={img} alt="Brand"  onClick={handleLinkClick} style={{ width: '150px', height: '65px'}} className='imglogo' />
           </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />

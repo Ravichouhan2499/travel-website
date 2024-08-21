@@ -3,12 +3,22 @@
     height: 60px;
   }
 
+ .ul .navbar-nav{
+  margin-right: 50px;
+ }
 
 
-
-  @media (min-width: 1000px) and (max-width: 1440px) {
+  @media (min-width: 1000px) and (max-width: 1050px) {
   .navbar-nav{
     margin-left: 450px;
   }
     
   }
+
+  @media (min-width: 1051px) and (max-width: 1440px) {
+    .navbar-nav{
+      margin-left: 650px;
+    }
+      
+    }
+  

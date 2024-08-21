@@ -1,5 +1,7 @@
 .authpage {
   background-image: url("../../Img/forr.jpg");
+  background-size: cover;
+  height: 150vh;
 }
 .container {
     padding-top: 0rem;
