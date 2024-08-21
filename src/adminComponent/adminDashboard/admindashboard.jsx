@@ -24,7 +24,7 @@ export default function Admindashboard() {
     </div>
     <hr/>
     
-    <div className='section'>
+    <div className='section' style={{ marginBottom: '50px' }}>
       <ViewPackages/>
       
     </div>
