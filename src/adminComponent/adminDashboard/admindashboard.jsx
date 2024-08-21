@@ -28,8 +28,6 @@ export default function Admindashboard() {
       <ViewPackages/>
       
     </div>
-    <br/>
-    <br/>
   </div>
   
   )

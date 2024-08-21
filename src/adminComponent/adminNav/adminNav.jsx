@@ -6,8 +6,8 @@ import './adminNav.css'
 
 export default function AdminNav() {
   return (
-    <div className="container-fluid position-relative nav-bar p-1">
-  <nav className="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-1 px-0">
+    <div className="container-fluid position-relative nav-bar px-0">
+  <nav className="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-2 px-0">
     <Link to="/admin/dashboard" className="navbar-brand">
       <img src={img} alt="Brand" style={{ width: '150px', height: '60px' }} className='imglogo' />
     </Link>
