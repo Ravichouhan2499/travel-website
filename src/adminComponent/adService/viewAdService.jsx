@@ -38,8 +38,8 @@ export default function ViewServices() {
                                 <td>Services</td>
                                 <td>About</td>
                                 <td >
-                               <FaRegEdit  onClick={Edit}/> &nbsp; &nbsp;
-                                  <MdDeleteForever   />
+                                  <FaRegEdit  style={{ color: 'blue', cursor: 'pointer' }}   onClick={Edit}/> &nbsp; &nbsp;
+                                  <MdDeleteForever  style={{ color: 'red', cursor: 'pointer' }}    />
                                   </td>
                             </tr>
                         </tbody>

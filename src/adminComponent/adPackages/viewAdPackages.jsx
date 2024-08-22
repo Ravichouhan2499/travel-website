@@ -41,8 +41,8 @@ export default function ViewPackages() {
                                   <td>4.5</td>
                                   <td>16000</td>
                                   <td >
-                                  <FaRegEdit   onClick={Edit}/> &nbsp; &nbsp;
-                                  <MdDeleteForever   />
+                                  <FaRegEdit  style={{ color: 'blue', cursor: 'pointer' }}   onClick={Edit}/> &nbsp; &nbsp;
+                                  <MdDeleteForever  style={{ color: 'red', cursor: 'pointer' }}    />
                                   </td>
                               </tr>
                           </tbody>

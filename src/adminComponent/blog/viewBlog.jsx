@@ -42,8 +42,8 @@ export default function ViewBlog() {
                                 <td>About</td>
                                 <td>Details</td>
                                 <td >
-                                  <FaRegEdit   onClick={Edit}/> &nbsp; &nbsp;
-                                  <MdDeleteForever   />
+                                  <FaRegEdit  style={{ color: 'blue', cursor: 'pointer' }}   onClick={Edit}/> &nbsp; &nbsp;
+                                  <MdDeleteForever  style={{ color: 'red', cursor: 'pointer' }}    />
                                   </td>
                             </tr>
                         </tbody>
