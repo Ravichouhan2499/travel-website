@@ -12,7 +12,7 @@ export default function Admindashboard() {
   const location = useLocation();
 
   useEffect(() => {
-      if (location.pathname === '/admin/') {
+      if (location.pathname === '/admin/dashboard') {
           const link = document.createElement('link');
           link.rel = 'stylesheet';
           link.href = '/css/bootstrap.min.css';
