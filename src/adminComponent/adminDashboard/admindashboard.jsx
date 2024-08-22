@@ -12,17 +12,18 @@ export default function Admindashboard() {
   const location = useLocation();
 
   useEffect(() => {
-      if (location.pathname === '/admin/dashboard') {
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = '/css/bootstrap.min.css';
-          document.head.appendChild(link);
 
-          return () => {
-              document.head.removeChild(link);
-          };
-      }
-  }, [location]);
+    const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/css/bootstrap.min.css';
+        if (location.pathname === '/admin/dashboard') {
+            document.head.appendChild(link);
+        }
+
+        return () => {
+            document.head.removeChild(link);
+        };
+    }, [location]);
 
 
 

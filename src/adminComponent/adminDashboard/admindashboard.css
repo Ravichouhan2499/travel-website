@@ -30,3 +30,7 @@ hr {
   }
 }
 
+.dash{
+  /* Re-apply Bootstrap styles only inside this ID */
+ @import url('/css/bootstrap.min.css');
+}
