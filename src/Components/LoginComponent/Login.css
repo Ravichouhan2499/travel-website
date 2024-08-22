@@ -1,31 +1,33 @@
 .authpage {
   background-image: url("../../Img/forr.jpg");
   background-size: cover;
-  height: 150vh;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
+
 .container {
-    padding-top: 0rem;
-    padding-bottom: 0rem;
-  }
-  
-  .form-container {
-    background-color: #f8f9fa;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .heed{
-    color: rgb(80, 79, 79);
-  }
- 
-  
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.form-container {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.heed {
+  color: rgb(80, 79, 79);
+}

@@ -37,7 +37,7 @@ export default function AdPackage() {
               </div>
               <div className="form-group">
                 <label htmlFor="rate"><b>Rate</b></label>
-                <input type="number" id="rate" className='form-control' required/>
+                <input type="number" id="points" className='form-control' required/>
               </div>
               <div className="form-group">
                 <label htmlFor="price"><b>Price</b></label>

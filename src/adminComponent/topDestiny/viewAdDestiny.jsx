@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaRegEdit } from 'react-icons/fa'
+import { MdDeleteForever } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 
 export default function ViewTopDestiny() {
@@ -35,10 +37,10 @@ export default function ViewTopDestiny() {
                                 <td>Image placeholder</td>
                                 <td>Services</td>
                                 <td>About</td>
-                                <td>
-                                    <button className="btn btn-primary btn-sm me-2" onClick={Edit}>Edit</button>
-                                    <button className="btn btn-danger btn-sm">Delete</button>
-                                </td>
+                                <td >
+                                  <FaRegEdit   onClick={Edit}/> &nbsp; &nbsp;
+                                  <MdDeleteForever   />
+                                  </td>
                             </tr>
                         </tbody>
                     </table>

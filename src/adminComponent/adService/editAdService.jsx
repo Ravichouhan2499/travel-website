@@ -11,15 +11,15 @@ export default function EditadServices() {
           <form>
             <div className="form-group">
               <label htmlFor="image"><b>Image</b></label>
-              <input type="file" id="image" name="image" className="form-control-file" required/>
+              <input type="file" className="form-control-file" required/>
             </div>
             <div className="form-group">
-              <label htmlFor="place"><b>Heading</b></label>
-              <input type="text" id="place" className='form-control' required/>
+              <label><b>Heading</b></label>
+              <input type="text" className='form-control' required/>
             </div>
             <div className="form-group">
               <label htmlFor="days"><b>Details</b></label>
-              <input type='number' id="days" className='form-control' required/>
+              <input type='text'  className='form-control' required/>
             </div>
             
             <button type="submit" className='btn btn-info btn-block mt-3'>Add Edited Services Details</button>

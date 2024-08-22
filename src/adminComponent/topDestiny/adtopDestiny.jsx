@@ -27,7 +27,7 @@ export default function AdTopDestiny() {
             </div>
             <div className="form-group">
               <label htmlFor="days"><b>Place</b></label>
-              <input type='number' className='form-control' required/>
+              <input type='text' className='form-control' required/>
             </div>
             
             <button type="submit" className='btn btn-info btn-block mt-3'>Add Destination</button>

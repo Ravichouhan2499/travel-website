@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './viewAdService.css'
+import { FaRegEdit } from 'react-icons/fa'
+import { MdDeleteForever } from 'react-icons/md'
 
 export default function ViewServices() {
 
@@ -35,10 +37,10 @@ export default function ViewServices() {
                                 <td>Image placeholder</td>
                                 <td>Services</td>
                                 <td>About</td>
-                                <td>
-                                    <button className="btn btn-primary btn-sm me-2" onClick={Edit}>Edit</button>
-                                    <button className="btn btn-danger btn-sm">Delete</button>
-                                </td>
+                                <td >
+                               <FaRegEdit  onClick={Edit}/> &nbsp; &nbsp;
+                                  <MdDeleteForever   />
+                                  </td>
                             </tr>
                         </tbody>
                     </table>

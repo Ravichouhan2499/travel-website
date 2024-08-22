@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './viewAdpackages.css'
+import { FaRegEdit } from 'react-icons/fa'
+import { MdDeleteForever } from 'react-icons/md'
 export default function ViewPackages() {
     const navigate = useNavigate()
 
@@ -38,9 +40,9 @@ export default function ViewPackages() {
                                   <td>5</td>
                                   <td>4.5</td>
                                   <td>16000</td>
-                                  <td>
-                                      <button className="btn btn-primary btn-sm me-2" onClick={Edit}>Edit</button>
-                                      <button className="btn btn-danger btn-sm">Delete</button>
+                                  <td >
+                                  <FaRegEdit   onClick={Edit}/> &nbsp; &nbsp;
+                                  <MdDeleteForever   />
                                   </td>
                               </tr>
                           </tbody>

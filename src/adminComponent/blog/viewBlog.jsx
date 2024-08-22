@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaRegEdit } from 'react-icons/fa'
+import { MdDeleteForever } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 
 export default function ViewBlog() {
@@ -39,10 +41,10 @@ export default function ViewBlog() {
                                 <td>Services</td>
                                 <td>About</td>
                                 <td>Details</td>
-                                <td>
-                                    <button className="btn btn-primary btn-sm me-2" onClick={Edit}>Edit</button>
-                                    <button className="btn btn-danger btn-sm">Delete</button>
-                                </td>
+                                <td >
+                                  <FaRegEdit   onClick={Edit}/> &nbsp; &nbsp;
+                                  <MdDeleteForever   />
+                                  </td>
                             </tr>
                         </tbody>
                     </table>
