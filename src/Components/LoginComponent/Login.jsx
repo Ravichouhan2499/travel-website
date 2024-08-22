@@ -10,11 +10,11 @@ export default function Login() {
           <h1 className="company-name">
             <span className="highlight">AVANTIKA</span> VACATIONS
           </h1>
-          <p className="company-tagline">Your Ultimate Travel Companion</p>
+          <p className="company-tagline">A Complete Travel Solution</p>
         </header>
         <main className="login-section">
           <div className="login-box">
-            <h2 className="login-title">Account Access</h2>
+            <h2 className="login-title">Login</h2>
             <form className="login-form">
               <div className="input-group">
                 <label htmlFor="user-email">Email Address</label>
@@ -24,7 +24,7 @@ export default function Login() {
                 <label htmlFor="user-password">Password</label>
                 <input id="user-password" type="password" required />
               </div>
-              <button type="submit" className="submit-btn">Sign In</button>
+              <button type="submit" className="submit-btn">LogIn</button>
             </form>
             <div className="form-divider" />
           </div>
