@@ -27,8 +27,8 @@ export default function AdService() {
               </div>
               <div className="form-group">
                 <label htmlFor="days"><b>Details</b></label>
-                <input type='number' id="days" className='form-control' required/>
-              </div>
+               <textarea type='text' className='details'  style={{ width: '100%', height: '150px' }} />
+                </div>
               
               <button type="submit" className='btn btn-info btn-block mt-3'>Add Services</button>
             </form>

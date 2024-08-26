@@ -18,9 +18,9 @@ export default function EditadServices() {
               <input type="text" className='form-control' required/>
             </div>
             <div className="form-group">
-              <label htmlFor="days"><b>Details</b></label>
-              <input type='text'  className='form-control' required/>
-            </div>
+                <label htmlFor="days"><b>Details</b></label>
+               <textarea type='text' className='details'  style={{ width: '80%', height: '150px' }} />
+                </div>
             
             <button type="submit" className='btn btn-info btn-block mt-3'>Add Edited Services Details</button>
           </form>

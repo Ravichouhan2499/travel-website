@@ -17,9 +17,9 @@ export default function EditBlog() {
               <input type="text" className='form-control' required/>
             </div>
             <div className="form-group">
-              <label htmlFor="days"><b>Details</b></label>
-              <input type='number'className='form-control' required/>
-            </div>
+                <label htmlFor="days"><b>Details</b></label>
+               <textarea type='text' className='details'  style={{ width: '100%', height: '150px' }} />
+                </div>
             
             <button type="submit" className='btn btn-info btn-block mt-3'>Add Edited Blog Details</button>
           </form>
