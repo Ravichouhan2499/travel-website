@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
 export default function Blog() {
+
+  const bplace = useRef()
+  const bDetails = useRef()
+
+  const Add =(e)=>
+  {
+e.preventDefault()
+
+var obj = {
+  place : bplace.current.value,
+  Details : bDetails.current.value
+}
+console.log("Obj is " , obj)
+  }
 
   return (
     <div className="container">
@@ -12,16 +26,16 @@ export default function Blog() {
             <h2 className='text-center alert-success'> Add Blog Details</h2>
             <form>
               <div className="form-group">
-                <label htmlFor="image"><b>Image</b></label>
-                <input type="file" id="image" name="image" className="form-control-file" required/>
+                <label ><b>Image</b></label>
+                <input type="file" className="form-control-file" required/>
               </div>
               <div className="form-group">
-                <label htmlFor="place"><b>Place</b></label>
-                <input type="text" id="place" className='form-control' required/>
+                <label ><b>Place</b></label>
+                <input type="text"  ref={bplace} className='form-control' required/>
               </div>
               <div className="form-group">
-                <label htmlFor="days"><b>Details</b></label>
-               <textarea type='text' className='details'  style={{ width: '100%', height: '150px' }} />
+                <label ><b>Details</b></label>
+               <textarea type='text'  ref={bDetails} style={{ width: '100%', height: '150px' }} />
                 </div>
               
               <button type="submit" className='btn btn-info btn-block mt-3'>Add Blog Details</button>

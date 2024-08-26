@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function AdService() {
-  
-    const navigate = useNavigate()
 
-    const Edit =()=>
+
+  const shead = useRef()
+  const sDetails = useRef()
+  
+    const Add =(e)=>
     {
-       navigate('/editadServices')
+      e.preventDefault()
+
+      var obj = {
+        heading :  shead.current.value,
+        details : sDetails.current.value
+      }
+
+      console.log("Obj is :" , obj)
+      e.target.reset()
     }
     
   return (<>
@@ -16,18 +26,15 @@ export default function AdService() {
         <div className="col-md-12">
           <div className="form-container">
             <h2 className='text-center alert-success'> Add Services</h2>
-            <form>
+            <form  onSubmit={Add}>
+             
               <div className="form-group">
-                <label htmlFor="image"><b>Service Icon</b></label>
-                <input type="file" id="image" name="image" className="form-control-file" required/>
+                <label ><b>Heading</b></label>
+                <input type="text" ref={shead } className='form-control' required/>
               </div>
               <div className="form-group">
-                <label htmlFor="place"><b>Heading</b></label>
-                <input type="text" id="place" className='form-control' required/>
-              </div>
-              <div className="form-group">
-                <label htmlFor="days"><b>Details</b></label>
-               <textarea type='text' className='details'  style={{ width: '100%', height: '150px' }} />
+                <label><b>Details</b></label>
+               <textarea type='text'ref={ sDetails} className='details'  style={{ width: '100%', height: '150px' }} />
                 </div>
               
               <button type="submit" className='btn btn-info btn-block mt-3'>Add Services</button>

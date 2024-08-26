@@ -13,13 +13,14 @@ export default function EditBlog() {
               <input type="file"  name="image" className="form-control-file" required/>
             </div>
             <div className="form-group">
-              <label htmlFor="place"><b>place</b></label>
-              <input type="text" className='form-control' required/>
-            </div>
-            <div className="form-group">
-                <label htmlFor="days"><b>Details</b></label>
-               <textarea type='text' className='details'  style={{ width: '100%', height: '150px' }} />
+                <label ><b>Place</b></label>
+                <input type="text"   className='form-control' required/>
+              </div>
+              <div className="form-group">
+                <label ><b>Details</b></label>
+               <textarea type='text'   style={{ width: '100%', height: '150px' }} />
                 </div>
+              
             
             <button type="submit" className='btn btn-info btn-block mt-3'>Add Edited Blog Details</button>
           </form>
