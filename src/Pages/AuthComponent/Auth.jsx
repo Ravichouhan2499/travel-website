@@ -39,10 +39,10 @@ export default function
         <Route path='viewBlog' element={<ViewBlog/>}></Route>
         <Route path='viewDestiny' element={<ViewTopDestiny/>}></Route>
         <Route path='viewServices' element={<ViewServices/>}></Route>
-        <Route path='editBlog' element={<EditBlog/>}></Route>
-        <Route path='editPackages' element={<EditPackages/>}></Route>
-        <Route path='editDestiny' element={<EditTopdestiny/>}></Route>
-        <Route path='editservices' element={<EditadServices/>}></Route>
+        <Route path='editBlog/:id' element={<EditBlog/>}></Route>
+        <Route path='editPackages/:id' element={<EditPackages/>}></Route>
+        <Route path='editDestiny/:id' element={<EditTopdestiny/>}></Route>
+        <Route path='editservices/:id' element={<EditadServices/>}></Route>
 
 
       </Routes>
