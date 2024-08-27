@@ -1,12 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import img from '../../Img/Somanath_Temple.jpg'
 import img1 from '../../Img/trimbakeshwar-mandir.jpg'
 import img2 from '../../Img/bhimashankar.jpg'
 import img3 from '../../Img/grishneswar.jpg'
 import img4 from '../../Img/nageshwar.jpeg'
 import img5 from '../../Img/baidyanathTemple.jpg'
+import { collection, getDocs } from 'firebase/firestore'
+import { database } from '../../Config'
 
 export default function Destiny() {
+
+  const [destinations, setDestinations] = useState([]);
+
+  useEffect(() => {
+    const fetchDestinations = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(database, 'destinations'));
+        const destinationsData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setDestinations(destinationsData);
+      } catch (error) {
+        console.error("Error fetching destinations: ", error);
+      }
+    };
+
+    fetchDestinations();
+  }, []);
+
   return (
   <div className="container-fluid py-5">
   <div className="container pt-5 pb-3">
@@ -73,5 +95,21 @@ export default function Destiny() {
   </div>
 </div>
 
+
   )
 }
+
+
+{/* <div className="row">
+{destinations.map((destination) => (
+  <div className="col-lg-4 col-md-6 mb-4" key={destination.id}>
+    <div className="destination-item position-relative overflow-hidden mb-2">
+      <img className="img-fluid" src={destination.destimageUrl} alt={destination.destname} style={{height: '240px', width: '100%', objectFit: 'cover'}} />
+      <a className="destination-overlay text-white text-decoration-none" href="#">
+        <h5 className="text-white">{destination.destname}</h5>
+        <span>{destination.destplace}</span>
+      </a>
+    </div>
+  </div>
+))}
+</div> */}

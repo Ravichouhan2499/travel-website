@@ -11,7 +11,8 @@ export default function Admindashboard() {
   return (
     <div className='dash' style={{ padding: '0 15px' }}>
     <div className='section' style={{ marginBottom: '30px' }}>
-      <ViewServices/>
+    <ViewPackages/>
+     
     </div>
     <hr/>
     
@@ -26,7 +27,7 @@ export default function Admindashboard() {
     <hr/>
     
     <div className='section' style={{ marginBottom: '50px' }}>
-      <ViewPackages/>
+    <ViewServices/>
       
     </div>
   </div>
