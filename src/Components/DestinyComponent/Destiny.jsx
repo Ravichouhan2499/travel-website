@@ -51,62 +51,6 @@ export default function Destiny() {
 ))}
 </div>
 
-    {/* <div className="row">
-      <div className="col-lg-4 col-md-6 mb-4">
-        <div className="destination-item position-relative overflow-hidden mb-2">
-          <img className="img-fluid" src={img} alt />
-          <a className="destination-overlay text-white text-decoration-none" href>
-            <h5 className="text-white">Somnath Temple</h5>
-            <span>Gujrat</span>
-          </a>
-        </div>
-      </div>
-      <div className="col-lg-4 col-md-6 mb-4">
-        <div className="destination-item position-relative overflow-hidden mb-2">
-          <img className="img-fluid" src={img1}  style={{height:'240px'}}alt />
-          <a className="destination-overlay text-white text-decoration-none" href>
-            <h5 className="text-white">Trimbakeshwar Temple</h5>
-            <span>Maharashtra</span>
-          </a>
-        </div>
-      </div>
-      <div className="col-lg-4 col-md-6 mb-4">
-        <div className="destination-item position-relative overflow-hidden mb-2">
-          <img className="img-fluid" src={img2} style={{height:'240px'}} alt />
-          <a className="destination-overlay text-white text-decoration-none" href>
-            <h5 className="text-white">BhimaShankar Temple</h5>
-            <span>Pune</span>
-          </a>
-        </div>
-      </div>
-      <div className="col-lg-4 col-md-6 mb-4">
-        <div className="destination-item position-relative overflow-hidden mb-2">
-          <img className="img-fluid" src={img3}  alt />
-          <a className="destination-overlay text-white text-decoration-none" href>
-            <h5 className="text-white">Grishneshwar Temple</h5>
-            <span>Aurangabad</span>
-          </a>
-        </div>
-      </div>
-      <div className="col-lg-4 col-md-6 mb-4">
-        <div className="destination-item position-relative overflow-hidden mb-2">
-          <img className="img-fluid" src={img4} style={{height:'260px'}} alt />
-          <a className="destination-overlay text-white text-decoration-none" href>
-            <h5 className="text-white">Nageshwar Temple</h5>
-            <span>Gujarat</span>
-          </a>
-        </div>
-      </div>
-      <div className="col-lg-4 col-md-6 mb-4">
-        <div className="destination-item position-relative overflow-hidden mb-2">
-          <img className="img-fluid" src={img5} style={{height:'260px'}} alt />
-          <a className="destination-overlay text-white text-decoration-none" href>
-            <h5 className="text-white">Badiyanath Temple</h5>
-            <span>Jharkhand</span>
-          </a>
-        </div>
-      </div>
-    </div> */}
   </div>
 </div>
 
@@ -114,17 +58,3 @@ export default function Destiny() {
   )
 }
 
-
-//  <div className="row">
-// {destinations.map((destination) => (
-//   <div className="col-lg-4 col-md-6 mb-4" key={destination.id}>
-//     <div className="destination-item position-relative overflow-hidden mb-2">
-//       <img className="img-fluid" src={destination.destimageUrl} alt={destination.destname} style={{height: '240px', width: '100%', objectFit: 'cover'}} />
-//       <a className="destination-overlay text-white text-decoration-none" href="#">
-//         <h5 className="text-white">{destination.destname}</h5>
-//         <span>{destination.destplace}</span>
-//       </a>
-//     </div>
-//   </div>
-// ))}
-// </div>
