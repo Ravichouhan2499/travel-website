@@ -58,8 +58,9 @@ export default function Login() {
                 <input ref={Pass}  type="password" required />
               </div>
               <button type="submit" className="submit-btn">LogIn</button>
+              <br/>
             </form>
-            <span>If you are not register ? <Link to="/admin/signUp">Sign Up</Link></span>
+            {/* <span>If you are not register ? <Link to="/admin/signUp">Sign Up</Link></span> */}
             <div  />
           </div>
         </main>
