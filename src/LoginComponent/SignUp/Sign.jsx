@@ -1,7 +1,9 @@
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 import React, { useRef } from 'react'
-import './Login.css'
-export default function Login() {
+import { Link } from 'react-router-dom'
+import { Auth } from '../../Config'
 
+export default function SignUp() {
 
   const Email = useRef()
   const Pass = useRef()
@@ -10,11 +12,20 @@ export default function Login() {
   {
     e.preventDefault()
 
-    var obj = {
-      email : Email.current.value,
-      password  : Pass.current.value
-    }
-    console.log("LoginDetails is :", obj)
+    const email = Email.current.value;
+    const password = Pass.current.value;
+
+    createUserWithEmailAndPassword(Auth , email ,password)
+    .then((userCredential)=>
+    {
+        console.log(userCredential)
+        
+    }).catch((error)=>
+    {
+        console.log(error)
+        alert(error)
+    })
+    
   }
 
   return (
@@ -30,7 +41,7 @@ export default function Login() {
         </header>
         <main className="login-section">
           <div className="login-box">
-            <h2 className="login-title">Login</h2>
+            <h2 className="login-title">SignUp</h2>
             <form className="login-form" onSubmit={Login}>
               <div className="input-group">
                 <label  >Email Address</label>
@@ -40,9 +51,10 @@ export default function Login() {
                 <label >Password</label>
                 <input ref={Pass}  type="password" required />
               </div>
-              <button type="submit" className="submit-btn">LogIn</button>
+              <button type="submit" className="submit-btn">SignUp</button>
             </form>
-            <div className="form-divider" />
+            
+            <div  />
           </div>
         </main>
       </div>

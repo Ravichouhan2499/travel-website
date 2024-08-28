@@ -12,16 +12,22 @@ import TeamComponent from './Components/TeamComponent/TeamComponent'
 import Testimonial from './Components/TestimonialComponent/Testimonial'
 import Blog from './Components/BlogComponent/Blog'
 import Home from './Pages/HomeComponent/Home'
-import Login from './Components/LoginComponent/Login'
 import Auth from './Pages/AuthComponent/Auth'
 import HomePage from './Pages/HomepageComponent/HomePage'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
 import Registration from './Components/RegistrationComponent/Registration'
+import Login from './LoginComponent/Login/Login'
+import SignUp from './LoginComponent/SignUp/Sign'
+import ProtectedRoute from './Pages/ProtectedRoute'
 
 
 
 
 export default function App() {
+
+
+ 
+
   return (<>
 
 
@@ -43,8 +49,12 @@ export default function App() {
   <Route path='/testimonial' element={<Testimonial/>}></Route>
   <Route path='/team' element={<TeamComponent/>}></Route>
   <Route path='/admin' element={<Login/>}></Route>
+  <Route path='/admin/signUp' element={<SignUp/>}></Route>
 
-  <Route path='/admin/*' element={<Auth/>}>  </Route>
+
+  <Route element={<ProtectedRoute />}>
+          <Route path='/admin/*' element={<Auth />} />
+        </Route>
 </Routes>
 
 {window.location.pathname.startsWith('/admin') ? null : <Footer />}

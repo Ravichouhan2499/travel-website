@@ -1,10 +1,35 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import img from '../../Img/sitelogo.jpg'
 import './adminNav.css'
+import { signOut } from 'firebase/auth'
+import { Auth } from '../../Config'
 
 
 export default function AdminNav() {
+
+  
+  const navigate = useNavigate()
+
+  const handleLogout = async () => {
+    try {
+      await signOut(Auth);
+     const logout = window.confirm("Are you sure you want to proceed?");
+      if (logout) {
+        alert("Logout Successfully");
+        navigate('/admin');
+        // Proceed with the action
+    } else {
+        alert("Action canceled!");
+        // Cancel the action
+    }
+          
+    } catch (error) {
+      console.error("Error signing out: ", error);
+    }
+  };
+
+
   return (
     <div className="container-fluid position-relative nav-bar px-0">
   <nav className="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-2 px-0">
@@ -65,8 +90,8 @@ export default function AdminNav() {
             Profile
           </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
-            <li><Link className="dropdown-item" to="/service">Logout</Link></li>
+            <li><Link className="dropdown-item" to="/admin/profile">Profile</Link></li>
+            <li><Link className="dropdown-item" to="#" onClick={handleLogout}>Logout</Link></li>
           </ul>
         </li>
       </ul>
