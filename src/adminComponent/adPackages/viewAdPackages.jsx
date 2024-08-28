@@ -20,7 +20,7 @@ export default function ViewPackages() {
             const packageData = querySnapshot.docs.map(doc => ({
                 id: doc.id,
                 ...doc.data()
-            }))
+            })).reverse()
             setPackages(packageData)
         } catch (error) {
             console.error("Error fetching packages: ", error)
@@ -55,6 +55,7 @@ export default function ViewPackages() {
                                     <tr>
                                         <th>Sno.</th>
                                         <th>Image</th>
+                                        <th>Location</th>
                                         <th>Place</th>
                                         <th>Days</th>
                                         <th>Person</th>
@@ -63,12 +64,13 @@ export default function ViewPackages() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {packages.map((pkg, index) => (
+                                    {packages.map((pkg, index) => ( 
                                         <tr key={pkg.id}>
                                             <td>{index + 1}</td>
                                             <td>
                                                 <img src={pkg.pkimageUrl} alt={pkg.pkplace} style={{width: '50px', height: '50px', objectFit: 'cover'}} />
                                             </td>
+                                            <td>{pkg.pkloc}</td>
                                             <td>{pkg.pkplace}</td>
                                             <td>{pkg.pkday}</td>
                                             <td>{pkg.pkperson}</td>

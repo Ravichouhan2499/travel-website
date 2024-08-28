@@ -4,13 +4,28 @@ import { database, storage } from '../../Config'; // Adjust the import based on 
 import { collection, addDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuidv4, v4 } from 'uuid'; // For unique image naming
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default function Blog() {
+ 
+  const [value, setValue] = useState('') // text editor
+  
     
     const bplace = useRef();
-    const bDetails = useRef();
+    const bdate = useRef()
+    
     const [imageFile, setImageFile] = useState(null);
     const [message, setMessage] = useState('');
+
+    const stripHtmlTags = (html) => {
+        const tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
+    };
+
+    const strippedDetails = stripHtmlTags(value);
+
 
     const handleImageChange = (e) => {
         setImageFile(e.target.files[0]);
@@ -31,7 +46,8 @@ export default function Blog() {
 
             const obj = {
                 place: bplace.current.value,
-                details: bDetails.current.value,
+                details:  strippedDetails,
+                date : bdate.current.value,
                 imageUrl: imageUrl
             };
 
@@ -41,6 +57,8 @@ export default function Blog() {
             setMessage("Blog added successfully!");
             e.target.reset();
             setImageFile(null);
+            setValue('')
+
           
         } catch (error) {
             console.error("Error adding blog: ", error);
@@ -66,6 +84,18 @@ export default function Blog() {
                                     required
                                 />
                             </div>
+
+
+
+                            <div className="form-group">
+                                <label><b>Date</b></label>
+                                <input 
+                                    type="date" 
+                                    ref={bdate} 
+                                    className='form-control' 
+                                    required
+                                />
+                            </div>
                             <div className="form-group">
                                 <label><b>Place</b></label>
                                 <input 
@@ -75,14 +105,29 @@ export default function Blog() {
                                     required
                                 />
                             </div>
+
                             <div className="form-group">
                                 <label><b>Details</b></label>
-                                <textarea 
-                                    ref={bDetails} 
-                                    style={{ width: '100%', height: '150px' }} 
-                                    required
-                                />
+                                <ReactQuill 
+            theme="snow" 
+            value={value} 
+           
+            onChange={setValue} 
+            style={{height:'200px'}}
+            modules={{
+                toolbar: [
+                    [{ 'header': '1'}, { 'header': '2'}, { 'font': [] }],
+                    [{size: []}],
+                    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                    [{'list': 'ordered'}, {'list': 'bullet'}, 
+                    {'indent': '-1'}, {'indent': '+1'}],
+                    ['link', 'image'],
+                    ['clean']
+                ],
+            }}
+        />
                             </div>
+                            <br/>
                             <button type="submit" className='btn btn-info btn-block mt-3'>
                                 Add Blog Details
                             </button>

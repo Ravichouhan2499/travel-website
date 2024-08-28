@@ -35,7 +35,21 @@ export default function Service() {
       <h6 className="text-primary text-uppercase" style={{letterSpacing: 5}}>Services</h6>
       <h1>Tours &amp; Travel Services</h1>
     </div>
-    <div className="row">
+
+   
+        <div className="row">
+          {services.map((service) => (
+            <div key={service.id} className="col-lg-4 col-md-6 mb-4">
+              <div className="service-item bg-white text-center mb-2 py-5 px-4">
+                <i className={`fa fa-2x ${service.icon} mx-auto mb-4`} />
+                <h5 className="mb-2">{service.heading}</h5>
+                <p className="m-0">{service.details}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+    {/* <div className="row">
       <div className="col-lg-4 col-md-6 mb-4">
         <div className="service-item bg-white text-center mb-2 py-5 px-4">
           <i className="fa fa-2x fa-route mx-auto mb-4" />
@@ -82,7 +96,7 @@ export default function Service() {
           <p className="m-0">we simplify your trip by offering both transportation and hotel bookings. You can easily search and compare accommodations like hotels, guesthouses,and resorts based on your destination.</p>
         </div>
       </div>
-    </div>
+    </div> */}
   </div>
 </div>
 

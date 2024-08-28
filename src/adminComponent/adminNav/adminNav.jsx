@@ -28,15 +28,7 @@ export default function AdminNav() {
           </ul>
         </li>
 
-        <li className="nav-item dropdown">
-          <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
-          </Link>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/admin/viewServices">View Services Details</Link></li>
-            <li><Link className="dropdown-item" to="/admin/service">Add Services Details</Link></li>
-          </ul>
-        </li>
+
 
         <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,6 +47,16 @@ export default function AdminNav() {
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><Link className="dropdown-item" to="/admin/viewBlog">View Blog Details</Link></li>
             <li><Link className="dropdown-item" to="/admin/blog">Add Blog Details</Link></li>
+          </ul>
+        </li>
+
+        <li className="nav-item dropdown">
+          <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </Link>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><Link className="dropdown-item" to="/admin/viewServices">View Services Details</Link></li>
+            <li><Link className="dropdown-item" to="/admin/service">Add Services Details</Link></li>
           </ul>
         </li>
 

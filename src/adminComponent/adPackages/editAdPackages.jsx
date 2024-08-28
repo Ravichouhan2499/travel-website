@@ -10,6 +10,7 @@ export default function EditPackages() {
   const navigate = useNavigate();
 
   const [packageData, setPackageData] = useState({
+    pkloc : '',
     pkplace: '',
     pkday: '',
     pkperson: '',
@@ -63,6 +64,7 @@ export default function EditPackages() {
       // Update the document in Firestore
       const docRef = doc(database, 'Packages', id); // Use id from useParams
       await updateDoc(docRef, {
+        pkloc : packageData.pkloc,
         pkplace: packageData.pkplace,
         pkday: parseInt(packageData.pkday),
         pkperson: parseInt(packageData.pkperson),
@@ -98,6 +100,20 @@ export default function EditPackages() {
                 />
                 {packageData.pkimageUrl && <img src={packageData.pkimageUrl} alt="Current package" style={{width: '100px', height: '100px', objectFit: 'cover'}} />}
               </div>
+
+              <div className="form-group">
+                <label><b>Location</b></label>
+                <input 
+                  type="text" 
+                  name="pkloc" 
+                  value={packageData.pkloc} 
+                  onChange={handleInputChange} 
+                  className='form-control' 
+                  required
+                />
+                </div>
+
+
               <div className="form-group">
                 <label><b>Place</b></label>
                 <input 

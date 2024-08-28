@@ -54,6 +54,7 @@ export default function ViewBlog() {
                                     <tr>
                                         <th>Sno.</th>
                                         <th>Image</th>
+                                        <th>Date</th>
                                         <th>Place</th>
                                         <th>Details</th>
                                         <th>Action</th>
@@ -74,6 +75,7 @@ export default function ViewBlog() {
                                                     'No Image'
                                                 )}
                                             </td>
+                                            <td>{blog.date}</td>
                                             <td>{blog.place}</td>
                                             <td>{blog.details}</td>
                                             <td>

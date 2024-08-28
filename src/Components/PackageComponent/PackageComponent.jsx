@@ -24,7 +24,7 @@ export default function PackageComponent() {
       const packageData = querySnapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
-      }));
+      })).reverse();
       setPackages(packageData);
     } catch (error) {
       console.error("Error fetching packages: ", error);
@@ -39,8 +39,31 @@ export default function PackageComponent() {
       <h1>Pefect Tour Packages</h1>
     </div>
   
-
     <div className="row">
+{packages.map((pkg) => (
+  <div className="col-lg-4 col-md-6 mb-4" key={pkg.id}>
+    <div className="package-item bg-white mb-2">
+      <img className="img-fluid" src={pkg.pkimageUrl} style={{height:'210px', width:'100%'}} alt={pkg.pkplace} />
+      <div className="p-4">
+        <div className="d-flex justify-content-between mb-3">
+          <small className="m-0"><FaMapMarkerAlt className="text-primary mr-2" />{pkg.pkloc}</small>
+          <small className="m-0"><FaCalendarAlt className="text-primary mr-2" />{pkg.pkday} days</small>
+          <small className="m-0"><FaUser className="text-primary mr-2" />{pkg.pkperson} Person</small>
+        </div>
+        <a className="h5 text-decoration-none" href="#">{pkg.pkplace}</a>
+        <div className="border-top mt-4 pt-4">
+          <div className="d-flex justify-content-between">
+            <h6 className="m-0"><FaStar className="text-primary mr-2" />4.5 <small>(250)</small></h6>
+            <h5 className="m-0"><FaRupeeSign />{pkg.pkprice}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+))}
+</div> 
+
+    {/* <div className="row">
       <div className="col-lg-4 col-md-6 mb-4">
         <div className="package-item bg-white mb-2">
           <img className="img-fluid" src={img} style={{height:'210px', width:'100%'}}  alt />
@@ -155,7 +178,7 @@ export default function PackageComponent() {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
   </div>
 </div>
 
@@ -185,4 +208,4 @@ export default function PackageComponent() {
     </div>
   </div>
 ))}
-</div> */}
+</div>  */}

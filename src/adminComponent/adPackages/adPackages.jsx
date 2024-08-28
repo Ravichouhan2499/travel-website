@@ -10,6 +10,7 @@ export default function AdPackage() {
     const Pgday = useRef()
     const pgperson = useRef()
     const pgprice = useRef()
+    const pgloc = useRef()
 
     const [img, setImg] = useState(null)
     const [message, setMessage] = useState('')
@@ -33,6 +34,7 @@ export default function AdPackage() {
                 pkday: parseInt(Pgday.current.value),
                 pkperson: parseInt(pgperson.current.value),
                 pkprice: parseFloat(pgprice.current.value),
+                pkloc : pgloc.current.value,
                 pkimageUrl: imageUrl
             }
 
@@ -66,9 +68,15 @@ export default function AdPackage() {
                                 />
                             </div>
                             <div className="form-group">
-                                <label><b>Place</b></label>
+                                <label><b>Location</b></label>
+                                <input type="text" ref={pgloc} className='form-control' required/>
+                            </div>
+
+                            <div className="form-group">
+                                <label><b>Place </b></label>
                                 <input type="text" ref={pgplace} className='form-control' required/>
                             </div>
+
                             <div className="form-group">
                                 <label><b>Days</b></label>
                                 <input type='number' ref={Pgday} className='form-control' required/>

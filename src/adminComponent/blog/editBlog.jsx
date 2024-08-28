@@ -4,11 +4,17 @@ import { database, storage } from '../../Config'; // Adjust the import based on 
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 as uuidv4 } from 'uuid';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default function EditBlog() {
+
+  const [value, setValue] = useState('') // text editor
+
     const { id } = useParams(); // Get the blog ID from URL parameters
     const navigate = useNavigate();
     const [blogData, setBlogData] = useState({
+        date: '',
         place: '',
         details: '',
         imageUrl: ''
@@ -18,6 +24,7 @@ export default function EditBlog() {
 
     const placeRef = useRef();
     const detailsRef = useRef();
+    const dateref = useRef()
 
     useEffect(() => {
         // Fetch existing blog data when component mounts
@@ -27,6 +34,7 @@ export default function EditBlog() {
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     setBlogData(docSnap.data());
+                    setValue(docSnap.data().details);
                 } else {
                     setMessage("No such blog!");
                 }
@@ -38,6 +46,12 @@ export default function EditBlog() {
 
         fetchBlogData();
     }, [id]);
+
+    const stripHtmlTags = (html) => {
+        const tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
+      };
 
     const handleImageChange = (e) => {
         setImage(e.target.files[0]);
@@ -60,8 +74,9 @@ export default function EditBlog() {
             // Update the blog data in Firestore
             const docRef = doc(database, 'blogs', id);
             await updateDoc(docRef, {
+                date : dateref.current.value,
                 place: placeRef.current.value,
-                details: detailsRef.current.value,
+                details: stripHtmlTags(value),
                 imageUrl: updatedImageUrl
             });
 
@@ -100,6 +115,16 @@ export default function EditBlog() {
                                 )}
                             </div>
                             <div className="form-group">
+                                <label><b>date</b></label>
+                                <input 
+                                    type="date" 
+                                    ref={dateref} 
+                                    className="form-control-file" 
+                                    required
+                                />
+                            </div>
+
+                            <div className="form-group">
                                 <label><b>Place</b></label>
                                 <input 
                                     type="text" 
@@ -111,12 +136,25 @@ export default function EditBlog() {
                             </div>
                             <div className="form-group">
                                 <label><b>Details</b></label>
-                                <textarea 
-                                    ref={detailsRef} 
-                                    defaultValue={blogData.details} 
-                                    style={{ width: '100%', height: '150px' }} 
-                                    required
-                                />
+                                <ReactQuill 
+            theme="snow" 
+            value={value} 
+            ref={detailsRef}
+            onChange={setValue} 
+            style={{height:'200px'}}
+            modules={{
+                toolbar: [
+                    [{ 'header': '1'}, { 'header': '2'}, { 'font': [] }],
+                    [{size: []}],
+                    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+                    [{'list': 'ordered'}, {'list': 'bullet'}, 
+                    {'indent': '-1'}, {'indent': '+1'}],
+                    ['link', 'image'],
+                    ['clean']
+                ],
+            }}
+        />
+        <br/>
                             </div>
                             <button type="submit" className='btn btn-info btn-block mt-3'>
                                 Update Blog Details

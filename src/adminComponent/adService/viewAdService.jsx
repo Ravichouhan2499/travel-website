@@ -54,7 +54,8 @@ export default function ViewServices() {
                     <table className="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Sno.</th>        
+                                <th>Sno.</th>    
+                                <th>Icon</th>    
                                 <th>Heading</th>
                                 <th>Details</th>
                                 <th>Action</th>
@@ -64,6 +65,9 @@ export default function ViewServices() {
                         {Services.map((srv, index) => (
                                         <tr key={srv.id}>
                                             <td>{index + 1}</td>
+                                            <td>
+                                                <i className={srv.icon} style={{ fontSize: '24px' }}></i> {/* Render icon */}
+                                            </td>
                                             <td>{srv.heading}</td>
                                             <td>{srv.details}</td>
                                            
