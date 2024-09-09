@@ -22,7 +22,7 @@ export default function Footer() {
             <Link className="text-white-50 mb-2" to="/about" onClick={handleLinkClick}>
               <i className="fa fa-angle-right me-2" />About
             </Link>
-            <Link className="text-white-50 mb-2" to="/destiny" onClick={handleLinkClick}>
+            <Link className="text-white-50 mb-2" to="/destination" onClick={handleLinkClick}>
               <i className="fa fa-angle-right me-2" />Destination
             </Link>
             <Link className="text-white-50 mb-2" to="/service" onClick={handleLinkClick}>
