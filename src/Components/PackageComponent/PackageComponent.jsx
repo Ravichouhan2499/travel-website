@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import img from '../../Img/jyotirling.jpg'
-import img1 from '../../Img/somnath.jpg'
-import img2 from '../../Img/vaishnovdevo.jpg'
-import img3 from '../../Img/goldentempl.jpg'
-import img4 from '../../Img/khatu.jpg'
-import img5 from '../../Img/kedarnath.jpg'
+
 
 import { FaCalendarAlt, FaMapMarkerAlt, FaRupeeSign, FaStar, FaUser } from 'react-icons/fa'
 import { database } from '../../Config'

@@ -1,7 +1,7 @@
 import React from 'react'
-import Img from '../../Img/abbout.jpg'
+import Img from '../../Img/aboutt.jpg'
 import Img3 from '../../Img/goldenTemple.jpg'
-import Img2 from '../../Img/vaishnavdevi.jpg'
+import Img2 from '../../Img/vaishnavdevi (1).jpg'
 
 export default function About() {
   return (

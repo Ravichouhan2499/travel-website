@@ -28,10 +28,10 @@ export default function Registration() {
               <div className="card-body rounded-bottom bg-white p-5">
                 <form>
                   <div className="form-group mb-3">
-                    <input type="text" className="form-control p-4" placeholder="Your name" required />
+                    <input type="text" className="form-control p-2" placeholder="Your name" required />
                   </div>
                   <div className="form-group mb-3">
-                    <input type="email" className="form-control p-4" placeholder="Your email" required />
+                    <input type="email" className="form-control p-2" placeholder="Your email" required />
                   </div>
 
                   <div className="form-group mb-3">

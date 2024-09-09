@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import img from '../../Img/goldblog.jpg'
 import { Link } from 'react-router-dom'
-import img2 from '../../Img/Vaishnavii.jpg'
-import img3 from '../../Img/trimbakeshwar-mandir-0.jpg'
+
 import { collection, getDocs } from 'firebase/firestore'
 import { database } from '../../Config'
 

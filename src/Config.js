@@ -6,14 +6,14 @@ import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCDI189CJ-H4zLZjm1c1AAObSyNj_uAeGw",
+    apiKey: process.env.REACT_APP_FIRBASE_API_KEY,
     authDomain: "avantika-vacations-2024.firebaseapp.com",
     projectId: "avantika-vacations-2024",
     storageBucket: "avantika-vacations-2024.appspot.com",
-    messagingSenderId: "347200780834",
-    appId: "1:347200780834:web:57b1ce77d03ceadb11687b",
-    measurementId: "G-Z654VZTPGK"
+   
   };
+
+  console.log(process.env.REACT_APP_FIRBASE_API_KEY)
 
   const app = initializeApp(firebaseConfig)
    

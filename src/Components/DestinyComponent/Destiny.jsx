@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import img from '../../Img/Somanath_Temple.jpg'
-import img1 from '../../Img/trimbakeshwar-mandir.jpg'
-import img2 from '../../Img/bhimashankar.jpg'
-import img3 from '../../Img/grishneswar.jpg'
-import img4 from '../../Img/nageshwar.jpeg'
-import img5 from '../../Img/baidyanathTemple.jpg'
+
 import { collection, getDocs } from 'firebase/firestore'
 import { database } from '../../Config'
 

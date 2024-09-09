@@ -28,6 +28,7 @@ export default function AdPackage() {
                 const snapshot = await uploadBytes(imageRef, img)
                 imageUrl = await getDownloadURL(snapshot.ref)
             }
+            
 
             const obj = {
                 pkplace: pgplace.current.value,
