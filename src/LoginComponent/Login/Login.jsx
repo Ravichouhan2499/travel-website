@@ -25,12 +25,13 @@ export default function Login() {
     {
         console.log(userCredential)
 
-        alert("Login Succesfully")
+        // alert("Login Succesfully")
         setLogin(true)
         navi('/admin/dashboard')  
         }).catch((error)=>
     {
-        alert(error)
+        alert("Something went Wrong")
+        console.log(error)
     })
   }
 

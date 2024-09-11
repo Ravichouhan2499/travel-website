@@ -47,19 +47,19 @@ export default function Footer() {
         <div className="col-lg-3 col-md-6 mb-4 mb-md-5">
           <h6 className="text-white text-uppercase mb-3" style={{ letterSpacing: 5 }}>Follow Us</h6>
           <div className="d-flex flex-wrap">
-            <Link className="btn btn-outline-primary btn-square me-2 mb-2" to="https://x.com/avntikavacation">
+            <Link className="btn btn-outline-primary btn-square me-2 mb-2" target='blank' to="https://x.com/avntikavacation">
               <i className="fab fa-twitter" />
             </Link>
-            <Link className="btn btn-outline-primary btn-square me-2 mb-2" to="https://www.facebook.com/avantikavacations">
+            <Link className="btn btn-outline-primary btn-square me-2 mb-2" target='blank' to="https://www.facebook.com/avantikavacations">
               <i className="fab fa-facebook-f" />
             </Link>
             {/* <Link className="btn btn-outline-primary btn-square me-2 mb-2" to="#">
               <i className="fab fa-linkedin-in" />
             </Link> */}
-            <Link className="btn btn-outline-primary btn-square mb-2" to="https://www.instagram.com/avantika_vacations">
+            <Link className="btn btn-outline-primary btn-square mb-2" target='blank' to="https://www.instagram.com/avantika_vacations">
               <i className="fab fa-instagram" />
             </Link>
-            <Link className="btn btn-outline-primary btn-square mb-2" to="https://www.youtube.com/@avantikavacations">
+            <Link className="btn btn-outline-primary btn-square mb-2" target='blank' to="https://www.youtube.com/@avantikavacations">
               <i className="fab fa-youtube" />
             </Link>
 

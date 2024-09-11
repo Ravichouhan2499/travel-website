@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './Components/NavbarComponent/navbar'
 import Caro from './Components/CaresueolComponenet/Caro'
 import About from './Components/AboutComponent/About'
@@ -19,6 +19,7 @@ import Registration from './Components/RegistrationComponent/Registration'
 import Login from './LoginComponent/Login/Login'
 import SignUp from './LoginComponent/SignUp/Sign'
 import ProtectedRoute from './Pages/ProtectedRoute'
+import PublicRoute from './Pages/publicRoute'
 
 
 
@@ -26,6 +27,7 @@ import ProtectedRoute from './Pages/ProtectedRoute'
 export default function App() {
 
 
+ 
  
 
   return (<>
@@ -48,14 +50,19 @@ export default function App() {
   <Route path='/blog' element={<Blog/>}></Route>
   <Route path='/testimonial' element={<Testimonial/>}></Route>
   <Route path='/team' element={<TeamComponent/>}></Route>
-  <Route path='/admin' element={<Login/>}></Route>
   <Route path='/admin/signUp' element={<SignUp/>}></Route>
 
 
   <Route element={<ProtectedRoute />}>
           <Route path='/admin/*' element={<Auth />} />
         </Route>
-</Routes>
+
+<Route element={<PublicRoute />}>
+          <Route path="/admin" element={<Login />} />
+        </Route>
+
+        </Routes>
+
 
 {window.location.pathname.startsWith('/admin') ? null : <Footer />}
   </>
