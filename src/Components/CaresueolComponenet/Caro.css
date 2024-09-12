@@ -4,6 +4,9 @@
     overflow: hidden;
   }
 
+  .carousel-indicators {
+    display: none;
+  }
   .carousel-control-next .visually-hidden,
 .carousel-control-prev .visually-hidden {
   display: none;

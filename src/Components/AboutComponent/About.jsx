@@ -2,8 +2,14 @@ import React from 'react'
 import Img from '../../Img/aboutt.jpg'
 import Img3 from '../../Img/goldenTemple.jpg'
 import Img2 from '../../Img/vaishnavdevi (1).jpg'
+import { Link } from 'react-router-dom'
 
 export default function About() {
+
+  const handleLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div>
 <div className="container-fluid py-5">
@@ -27,7 +33,7 @@ export default function About() {
               <img className="img-fluid" src={Img3} style={{width:'200px'}} />
             </div>
           </div>
-          <a href className="btn btn-primary mt-1">Book Now</a>
+          <Link className="btn btn-primary mt-1" to='/contact' onClick={handleLinkClick}>Book Now</Link>
         </div>
       </div>
     </div>

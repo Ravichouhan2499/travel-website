@@ -35,7 +35,7 @@ export default function Navbar() {
 
              <div className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Service
+                    Services
             </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   

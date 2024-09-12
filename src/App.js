@@ -50,7 +50,7 @@ export default function App() {
   <Route path='/blog' element={<Blog/>}></Route>
   <Route path='/testimonial' element={<Testimonial/>}></Route>
   <Route path='/team' element={<TeamComponent/>}></Route>
-  <Route path='/admin/signUp' element={<SignUp/>}></Route>
+  {/* <Route path='/admin/signUp' element={<SignUp/>}></Route> */}
 
 
   <Route element={<ProtectedRoute />}>
