@@ -1,23 +1,20 @@
-/* Reduce the container width */
+/* Container settings */
 .navbar-container {
   max-width: 700px; /* Adjust as needed */
   margin: 0 auto;
+  padding-bottom: 500px;
 }
 
 /* Adjust navbar brand logo */
 .imglogo {
-  width: 120px;
-  height: auto;
+  width: 150px;
+  height: 80px;
+  object-fit: contain;
 }
 
-.spacer1 {
-  display: inline-block;
-  width: 500px; /* Adjust this width as needed */
-}
-
-/* Adjust navbar link spacing */
+/* Navbar item styling */
 .nav-item {
-  margin: 0 1px; /* Reduce horizontal spacing */
+  margin: 0 1px;
 }
 
 .navbar-nav {
@@ -40,16 +37,9 @@
   }
 }
 
-
 /* Adjust navbar height */
 .navbar {
   padding: 0rem 1rem; /* Reduce the padding to decrease height */
-}
-
-/* Adjust brand logo size */
-.imglogo {
-  max-height: 50px; /* Reduce the height of the logo */
-  width: auto;      /* Maintain aspect ratio */
 }
 
 /* Adjust nav links padding */
@@ -60,6 +50,30 @@
 /* Adjust navbar toggler */
 .navbar-toggler {
   padding: 0.25rem 0.5rem; /* Reduce padding on the toggler button */
+}
+
+/* Spacer for larger screens */
+.spacer {
+  display: inline-block;
+  width: 800px; /* Adjust this width as needed */
+}
+
+/* Adjust navbar background */
+.navbar {
+  background-color: #f8f9fa;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Profile dropdown menu */
+.nav-item.dropdown .dropdown-menu {
+  min-width: 200px;
+}
+
+.nav-link.dropdown-toggle {
+  font-weight: bold;
 }
 
 /* Responsive adjustments */

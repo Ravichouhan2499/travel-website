@@ -4,10 +4,13 @@ import { MdDeleteForever } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { database } from '../../Config'; // Adjust the import based on your config file
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
+import Loader from '../../Components/loaderComponent/loader';
 
 export default function ViewBlog() {
     const navigate = useNavigate();
     const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         fetchBlogs();
@@ -20,9 +23,11 @@ export default function ViewBlog() {
                 id: doc.id,
                 ...doc.data()
             }));
+            setLoading(false)
             setBlogs(blogData);
         } catch (error) {
             console.error("Error fetching blogs: ", error);
+            setLoading(false)
         }
     };
 
@@ -40,6 +45,10 @@ export default function ViewBlog() {
             }
         }
     };
+
+    if (loading) {
+        return <Loader/>;
+    }
 
     return (
         <div className="container">

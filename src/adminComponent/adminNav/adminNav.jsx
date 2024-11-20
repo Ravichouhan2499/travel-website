@@ -13,9 +13,10 @@ export default function AdminNav() {
 
   const handleLogout = async () => {
     try {
-      await signOut(Auth);
+      
      const logout = window.confirm("Are you sure you want to proceed?");
       if (logout) {
+        await signOut(Auth);
         alert("Logout Successfully");
         navigate('/admin');
         // Proceed with the action
@@ -30,68 +31,104 @@ export default function AdminNav() {
   };
 
 
+  const handleDoubleNavigate = () => {
+    navigate('/');
+    setTimeout(() => navigate('/'), 0); // Navigate again after a brief delay
+  };
+  
+  const handleLinkClick = () => {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('#navbarSupportedContent');
+    
+    // Check if both elements exist
+    if (navbarToggler && navbarCollapse) {
+      if (navbarCollapse.classList.contains('show')) {
+        navbarToggler.click();
+      }
+    } else {
+      console.error('Navbar elements not found');
+    }
+  
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
+
+
   return (
     <div className="container-fluid position-relative nav-bar px-0">
   <nav className="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-2 px-0">
-    <Link to="/admin/dashboard" className="navbar-brand">
+    <Link to="/admin/dashboard" className="navbar-brand" onClick={handleLinkClick}>
       <img src={img} alt="Brand" style={{ width: '150px', height: '60px' }} className='imglogo' />
     </Link>
-
+  
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
-
+   
+    <div className="spacer2"></div>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      
       <ul className="navbar-nav  ">
-        <li className="nav-item dropdown">
+ 
+      <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Packages
+            <>Agent</>
           </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/admin/viewPackages">View Packages Details</Link></li>
-            <li><Link className="dropdown-item" to="/admin/packages">Add Packages Details</Link></li>
-          </ul>
-        </li>
-
-
-
-        <li className="nav-item dropdown">
-          <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Top Destination
-          </Link>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/admin/viewDestiny">View Destination Details</Link></li>
-            <li><Link className="dropdown-item" to="/admin/topDestiny">Add Destination Details</Link></li>
-          </ul>
+            <li><Link className="dropdown-item" to="/admin/agent" onClick={handleLinkClick}>Add Agent</Link></li>
+            <li><Link className="dropdown-item" to="/admin/viewAgent" onClick={handleLinkClick}>view Agent Details</Link></li>
+            <li><Link className="dropdown-item" to="/admin/viewGroup" onClick={handleLinkClick}>Agent Tour Details</Link></li>       </ul>
         </li>
 
         <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Blog
+           <>Packages</> 
           </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/admin/viewBlog">View Blog Details</Link></li>
-            <li><Link className="dropdown-item" to="/admin/blog">Add Blog Details</Link></li>
+            <li><Link className="dropdown-item" to="/admin/viewPackages" onClick={handleLinkClick}>View Packages Details</Link></li>
+            <li><Link className="dropdown-item" to="/admin/packages" onClick={handleLinkClick}>Add Packages Details</Link></li>
           </ul>
         </li>
 
         <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
+            <>Top Destination</>
           </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link className="dropdown-item" to="/admin/viewServices">View Services Details</Link></li>
-            <li><Link className="dropdown-item" to="/admin/service">Add Services Details</Link></li>
+            <li><Link className="dropdown-item" to="/admin/viewDestiny" onClick={handleLinkClick}>View Destination Details</Link></li>
+            <li><Link className="dropdown-item" to="/admin/topDestiny" onClick={handleLinkClick}>Add Destination Details</Link></li>
           </ul>
         </li>
 
         <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profile
+            <>Blog</>
+          </Link>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><Link className="dropdown-item" to="/admin/viewBlog" onClick={handleLinkClick}>View Blog Details</Link></li>
+            <li><Link className="dropdown-item" to="/admin/blog" onClick={handleLinkClick}>Add Blog Details</Link></li>
+          </ul>
+        </li>
+
+        <li className="nav-item dropdown">
+          <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <>Service</>
+          </Link>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><Link className="dropdown-item" to="/admin/viewServices" onClick={handleLinkClick}>View Services Details</Link></li>
+            <li><Link className="dropdown-item" to="/admin/service" onClick={handleLinkClick}>Add Services Details</Link></li>
+          </ul>
+        </li>
+
+        <li className="nav-item dropdown">
+          <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <>Profile</>
           </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><Link className="dropdown-item" to="/admin/profile">Profile</Link></li>
             <li><Link className="dropdown-item" to="#" onClick={handleLogout}>Logout</Link></li>
+            <li><Link className="dropdown-item" to="/" onClick={handleDoubleNavigate}>Home</Link></li>
           </ul>
         </li>
       </ul>

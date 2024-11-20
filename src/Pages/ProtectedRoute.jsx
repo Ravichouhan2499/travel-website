@@ -1,32 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { Auth } from '../Config';           // Adjust this import path as necessary
+import { Auth, database } from '../Config';
 import { onAuthStateChanged } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
+import Loader from '../Components/loaderComponent/loader';
 
-export default function ProtectedRoute() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false); 
+export default function RoleBasedRoute({ requiredRole }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userRole, setUserRole] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loginStatus = onAuthStateChanged(Auth, (user) => {
-      if (user) {
-        setIsAuthenticated(true);
+    const unsubscribe = onAuthStateChanged(Auth, async (agent) => {
+      if (agent) {
+        // Get user role from Firestore
+        const agentDoc = await getDoc(doc(database, 'agent', agent.uid));
+        if (agentDoc.exists()) {
+          setUserRole(agentDoc.data().role);
+          setIsAuthenticated(true);
+        }
       } else {
         setIsAuthenticated(false);
+        setUserRole(null);
       }
-      setLoading(false); // Ensure that loading is false after checking auth status
+      setLoading(false);
     });
 
-    return () => loginStatus();
+    return () => unsubscribe();
   }, []);
 
   if (loading) {
-    return <div></div>; // Show a loading indicator while checking auth status
+    return <Loader/>;
   }
 
-  return isAuthenticated ? <Outlet /> : <Navigate to='/admin' replace />;
+  if (!isAuthenticated) {
+    return <Navigate to="/admin" replace />;
+  }
 
-  //If the user is logged in (isAuthenticated === true): The protected content or child components are rendered via <Outlet />.
+  if (requiredRole && userRole !== requiredRole) {
+    return userRole === 'admin' 
+      ? <Navigate to="/admin/dashboard" replace />
+      : <Navigate to="/agent/dashboard" replace />;
+  }
 
-  //If the user is not logged in (isAuthenticated === false): The user is redirected to the login page (/admin) using <Navigate />.
+  return <Outlet />
+
 }

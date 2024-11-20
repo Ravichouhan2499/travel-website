@@ -1,0 +1,67 @@
+/* Table Image Styles */
+.table-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px; /* Optional rounded corners */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .table {
+      font-size: 14px; /* Smaller font for smaller screens */
+    }
+  
+    .table-image {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .btn {
+      font-size: 12px; /* Smaller buttons */
+      padding: 5px 8px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .table {
+      font-size: 12px; /* Further reduced font size */
+    }
+  
+    .table-image {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .btn {
+      font-size: 10px;
+      padding: 3px 6px;
+    }
+  
+    h2 {
+      font-size: 18px; /* Adjust heading size */
+    }
+  }
+  
+  /* Ensure the table is scrollable on smaller screens */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Styling for alerts (no data found) */
+  .alert-warning {
+    background-color: #ffc107;
+    color: black;
+    font-weight: bold;
+  }
+  
+  /* Margin and padding adjustments */
+  .mt-3 {
+    margin-top: 1rem !important;
+  }
+  
+  .ml-2 {
+    margin-left: 0.5rem !important;
+  }
+  

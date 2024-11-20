@@ -2,27 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { Auth } from '../Config';           // Adjust this import path as necessary
 import { onAuthStateChanged } from 'firebase/auth';
+import Loader from '../Components/loaderComponent/loader';
 
 export default function PublicRoute() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading , setLoading] = useState(true)
   
 
   useEffect(() => {
-    const loginStatus = onAuthStateChanged(Auth, (user) => {
-      if (user) {
+    const loginStatus = onAuthStateChanged(Auth, (agent) => {
+      if (agent) {
         setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
       }
-     
+     setLoading(false)
     });
 
     return () => loginStatus();
   }, []);
 
- 
+  
+  if (loading) {
+    return <Loader/>;
+  }
 
   return isAuthenticated ? <Navigate to='/admin/dashboard' replace /> : <Outlet />;
-//If logged in (isAuthenticated is true): Redirect to the dashboard (/admin/dashboard).
-  //If logged in (isAuthenticated is false): Redirect to the login page or child Component using (<Outlet/>).
+
 }

@@ -1,24 +1,141 @@
-.navbar-brand img {
-    width: 150px;
-    height: 60px;
-  }
+/* General Navbar Styling */
+.nav-bar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  margin-left: 1px;
+}
 
- .ul .navbar-nav{
-  margin-right: 50px;
- }
-
-
-  @media (min-width: 1000px) and (max-width: 1050px) {
-  .navbar-nav{
-    margin-left: 450px;
-  }
-    
-  }
-
-  @media (min-width: 1051px) and (max-width: 1440px) {
-    .navbar-nav{
-      margin-left: 650px;
-    }
-      
-    }
+.navbar-brand {
+  display: flex;
+  align-items: center;
   
+}
+
+.spacer2 {
+  display: inline-block;
+  width: 380px; /* Adjust this width as needed */
+}
+
+.imglogo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navigation links */
+.navbar-nav {
+  flex-direction: row;
+  gap: 15px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: #333;
+  font-size: 16px;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #007bff;
+}
+
+/* Dropdown Styling */
+.dropdown-menu {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  color: #333;
+  padding: 10px 15px;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: #fff;
+  background-color: #7c51d1;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #f8f9fa;
+    padding: 10px;
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+  }
+
+  .nav-link {
+    padding: 10px 10px;
+  }
+}
+
+/* Tablet View (adjusted for 768px to 1020px) */
+@media (min-width: 768px) and (max-width: 1020px) {
+  .nav-bar {
+    padding: 10px 15px;
+  }
+
+  .imglogo {
+    width: 120px;
+    height: auto;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  /* Ensure the toggle button is aligned to the right */
+  .navbar-toggler {
+    margin-left: auto;
+    margin-right: 0;
+    position: absolute; /* Added position absolute to ensure it stays on the right */
+    right: 15px; /* Add right spacing to fine-tune the button position */
+  }
+}
+
+/* Small Screen */
+@media (max-width: 767.98px) {
+  .navbar-toggler {
+    margin-left: auto;
+    margin-right: 0; 
+    position: absolute;
+    right:  15px;/* Ensure alignment to the right */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .imglogo {
+    width: 100px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 575.98px) {
+  .imglogo {
+    width: 80px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+    margin-right: 0; /* Ensure alignment to the right */
+  }
+}

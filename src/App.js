@@ -13,31 +13,39 @@ import Testimonial from './Components/TestimonialComponent/Testimonial'
 import Blog from './Components/BlogComponent/Blog'
 import Home from './Pages/HomeComponent/Home'
 import Auth from './Pages/AuthComponent/Auth'
-import HomePage from './Pages/HomepageComponent/HomePage'
-import { Navigate, Outlet, Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Registration from './Components/RegistrationComponent/Registration'
 import Login from './LoginComponent/Login/Login'
 import SignUp from './LoginComponent/SignUp/Sign'
-import ProtectedRoute from './Pages/ProtectedRoute'
+import RoleBasedRoute from './Pages/ProtectedRoute'
+import UserDashboard from './userComponent/userDashboard/userDashboard'
 import PublicRoute from './Pages/publicRoute'
-
-
+import Agent from './Pages/AgentComponent/Agent'
 
 
 export default function App() {
 
+  const location =  useLocation()
+  
+  useEffect(() => {
+    const pathsToReload = ['/admin/dashboard', '/agent/dashboard', '/*'];
 
- 
- 
+    // Check if the current path requires reload and it's not already reloaded
+    if (
+      pathsToReload.includes(location.pathname) &&
+      !window.sessionStorage.getItem(`reloaded-${location.pathname}`)
+    ) {
+      // Reload the page
+      window.location.reload();
+      // Mark this path as reloaded in session storage
+      window.sessionStorage.setItem(`reloaded-${location.pathname}`, 'true');
+    }
+  }, [location]);
 
   return (<>
 
-
-    
-{window.location.pathname.startsWith('/admin') ? null : <Navbar />}
-
-
-
+{window.location.pathname.startsWith('/admin') || 
+       window.location.pathname.startsWith('/agent') ? null : <Navbar />}
 
 <Routes>
   <Route path='/' element={<Home/>}></Route>
@@ -50,22 +58,32 @@ export default function App() {
   <Route path='/blog' element={<Blog/>}></Route>
   <Route path='/testimonial' element={<Testimonial/>}></Route>
   <Route path='/team' element={<TeamComponent/>}></Route>
+  
   {/* <Route path='/admin/signUp' element={<SignUp/>}></Route> */}
 
 
-  <Route element={<ProtectedRoute />}>
+   {/* Auth routes */}
+   <Route element = {<PublicRoute/>}>
+        <Route path="/admin" element={<Login />} />
+        </Route>
+
+        {/* Protected Admin routes */}
+        <Route element={<RoleBasedRoute requiredRole="admin" />}>
           <Route path='/admin/*' element={<Auth />} />
         </Route>
 
-<Route element={<PublicRoute />}>
-          <Route path="/admin" element={<Login />} />
+        {/* Protected User routes */}
+        <Route element={<RoleBasedRoute requiredRole="agent" />}>
+          <Route path='/agent/*' element={<Agent />} />
         </Route>
 
-        </Routes>
+
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
 
 
-{window.location.pathname.startsWith('/admin') ? null : <Footer />}
-  </>
+        {window.location.pathname.startsWith('/admin') || 
+       window.location.pathname.startsWith('/agent') ? null : <Footer />}  </>
  
   )
 }

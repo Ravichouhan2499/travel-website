@@ -5,11 +5,14 @@ import { FaRegEdit } from 'react-icons/fa'
 import { MdDeleteForever } from 'react-icons/md'
 import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
 import { database } from '../../Config'
+import Loader from '../../Components/loaderComponent/loader'
 
 export default function ViewServices() {
 
     const navigate = useNavigate()
     const [Services, setServices] = useState([])
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         fetchServices()
@@ -22,9 +25,11 @@ export default function ViewServices() {
                 id: doc.id,
                 ...doc.data()
             }))
+            setLoading(false)
             setServices(packageData)
         } catch (error) {
             console.error("Error fetching packages: ", error)
+            setLoading(false)
         }
     }
 
@@ -41,6 +46,10 @@ export default function ViewServices() {
                 console.error("Error deleting package: ", error)
             }
         }
+    }
+
+    if (loading) {
+        return <Loader/>;
     }
 
   return (
