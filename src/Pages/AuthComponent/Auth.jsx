@@ -25,6 +25,7 @@ import AdGroup from "../../userComponent/tourComponent/addTour";
 import ViewGroups from "../../userComponent/tourComponent/viewTourDetails";
 import EditAgentGroupDetails from "../../adminComponent/agentTourDetails/editAgentTourDetails";
 import ViewAgentTour from "../../adminComponent/agentTourDetails/viewAgentTourDetails";
+import AgentDetails from "../../adminComponent/agentComponent/agenttourdetails";
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function () {
@@ -53,6 +54,7 @@ export default function () {
         <Route path="editAgent/:id" element={<EditAgent />}></Route>
         <Route path="/viewGroup" element={<ViewAgentTour/>}></Route>
         <Route path="/editGroupDetails/:id" element={<EditAgentGroupDetails/>}></Route>
+        <Route path="/viewAgentDetails/:id" element={<AgentDetails/>}></Route>
 
       </Routes>
 

@@ -104,6 +104,11 @@ export default function UserNav() {
                   <b>Profile</b>
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                    <Link className="dropdown-item" to="/agent/profile" >
+                      profile
+                    </Link>
+                  </li>
                   <li>
                     <Link className="dropdown-item" to="#" onClick={handleLogout}>
                       Logout

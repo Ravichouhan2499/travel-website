@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { database, Auth } from "../../Config";
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc, getDoc } from "firebase/firestore";
 import { Loader } from "lucide-react";
-import "./viewTour.css";  // Import the custom CSS for the view
+import "./viewTour.css"; // Import the custom CSS for the view
 
 export default function ViewTours() {
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  // Fetch groups added by the current user
+  // Fetch groups added by the current user and agent names
   useEffect(() => {
-    const fetchGroups = async () => {
+    const fetchGroupsAndAgents = async () => {
       try {
         const user = Auth.currentUser;
         if (!user) {
@@ -32,7 +32,22 @@ export default function ViewTours() {
           }))
           .filter((group) => group.agentId === user.uid); // Filter by agentId
 
-        setGroups(userGroups);
+        // Fetch agent names
+        const groupsWithAgentNames = await Promise.all(
+          userGroups.map(async (group) => {
+            try {
+              const agentDocRef = doc(database, "agent", group.agentId);
+              const agentDoc = await getDoc(agentDocRef);
+              const agentName = agentDoc.exists() ? agentDoc.data().name : "Unknown";
+              return { ...group, agentName };
+            } catch (error) {
+              console.error("Error fetching agent name:", error);
+              return { ...group, agentName: "Error fetching name" };
+            }
+          })
+        );
+
+        setGroups(groupsWithAgentNames);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching groups:", error);
@@ -40,7 +55,7 @@ export default function ViewTours() {
       }
     };
 
-    fetchGroups();
+    fetchGroupsAndAgents();
   }, []);
 
   // Delete group
@@ -77,8 +92,9 @@ export default function ViewTours() {
                     <th>Tour Name</th>
                     <th>Payment</th>
                     <th>Number of People</th>
-                    <th>Agent ID</th>
+                    <th>Agent Name</th>
                     <th>Created At</th>
+                    <th>Payment Status</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
@@ -99,8 +115,24 @@ export default function ViewTours() {
                       <td>{group.tour}</td>
                       <td>{group.payment.toFixed(2)}</td>
                       <td>{group.numberOfPeople}</td>
-                      <td>{group.agentId}</td>
+                      <td>{group.agentName}</td> {/* Displaying Agent Name */}
                       <td>{new Date(group.createdAt).toLocaleDateString()}</td>
+                      <td>
+                        <span
+                          className={`badge ${
+                            group.paymentStatus === "approved"
+                              ? "badge-success"
+                              : group.paymentStatus === "pending"
+                              ? "badge-warning"
+                              : "badge-secondary"
+                          }`}
+                        >
+                          {group.paymentStatus
+                            ? group.paymentStatus.charAt(0).toUpperCase() +
+                              group.paymentStatus.slice(1)
+                            : "Pending"}
+                        </span>
+                      </td>
                       <td>
                         <button
                           onClick={() =>

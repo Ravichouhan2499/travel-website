@@ -1,0 +1,94 @@
+/* agentDetails.css */
+.agent-details-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Arial", sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .agent-details-container h2,
+  .agent-details-container h3 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .agent-info {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .agent-info p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .tours-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  
+  .tours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .tours-table th,
+  .tours-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tours-table th {
+    background-color: #2c3e50;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  .tours-table td {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .tours-table tr:nth-child(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .tours-table tr:hover {
+    background-color: #e8f4f8;
+  }
+  
+  .table-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .no-tours-message {
+    text-align: center;
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-top: 20px;
+  }
+  
+  .tours-table th:last-child,
+  .tours-table td:last-child {
+    text-align: center;
+  }
+  

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Auth, database } from "../../Config"; // Import Firebase config
 import { updateProfile } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import "./Profile.css";
+import "./profile.css";
 import Loader from "../../Components/loaderComponent/loader";
 
 const Profile = () => {
@@ -94,7 +94,7 @@ const Profile = () => {
   return (
     <div className="profile-container">
       <div className="profile-header">
-        <h2>Admin Profile</h2>
+        <h2>Agent Profile</h2>
         <p>Manage your account details below</p>
       </div>
       {isEditing ? (

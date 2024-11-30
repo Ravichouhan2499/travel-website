@@ -13,6 +13,8 @@ export default function EditGroupDetails() {
         tour: '',
         payment: '',
         numberOfPeople: '',
+        contact: '',
+        paymentMethod: '',
         imageUrl: '',
     });
     const [img, setImg] = useState(null); // Store the new image if uploaded
@@ -72,11 +74,13 @@ export default function EditGroupDetails() {
                 tour: groupDetails.tour,
                 payment: parseFloat(groupDetails.payment),
                 numberOfPeople: parseInt(groupDetails.numberOfPeople),
+                contact: groupDetails.contact,
+                paymentMethod: groupDetails.paymentMethod,
                 imageUrl,
             });
 
             setMessage('Group updated successfully!');
-            navigate('/agent/viewGroup'); // Redirect to group list after update
+            navigate('/agent/dashboard'); // Redirect to group list after update
         } catch (err) {
             console.error('Error updating group:', err);
             setError('Failed to update group details. Please try again.');
@@ -124,6 +128,17 @@ export default function EditGroupDetails() {
                                 />
                             </div>
                             <div className="form-group">
+                                <label><b>Contact</b></label>
+                                <input
+                                    type="number"
+                                    name="contact"
+                                    className="form-control"
+                                    value={groupDetails.contact}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
                                 <label><b>Payment</b></label>
                                 <input
                                     type="number"
@@ -133,6 +148,20 @@ export default function EditGroupDetails() {
                                     onChange={handleInputChange}
                                     required
                                 />
+                            </div>
+                            <div className="form-group">
+                                <label><b>Payment Method</b></label>
+                                <select
+                                    className="form-control"
+                                    name="paymentMethod"
+                                    value={groupDetails.paymentMethod}
+                                    onChange={handleInputChange}
+                                    required
+                                >
+                                    <option value="">Select Payment Method</option>
+                                    <option value="online">Online</option>
+                                    <option value="cash">Cash</option>
+                                </select>
                             </div>
                             <div className="form-group">
                                 <label><b>Number of People</b></label>
